@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Campus Connect - My Clubs</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="theme-v2.css" />
+</head>
+<body>
+  <header class="site-header">
+    <nav class="navbar">
+      <h2 class="logo">Campus Connect</h2>
+      <ul class="nav-links active-desktop">
+        <li><a href="index.html">Public Home</a></li>
+        <li><a href="my-clubs.html">My Clubs</a></li>
+        <li><a href="notifications.html">Notifications</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="admin-container modern-page-container">
+    <section class="admin-hero modern-page-hero">
+      <div>
+        <p class="eyebrow">Student Portal</p>
+        <h1>My Clubs</h1>
+        <p>View clubs where you are a member and open club-specific event/task details.</p>
+      </div>
+    </section>
+
+    <section class="admin-card modern-directory-card">
+      <div class="admin-card-header">
+        <h3>Club Memberships</h3>
+        <p>Click a club to view your role, club details, approved events, and assigned tasks.</p>
+      </div>
+      <div class="club-name-list modern-directory-list" id="myClubsList">
+        <p class="loading-message small-loading">Loading your clubs...</p>
+      </div>
+    </section>
+  </main>
+
+  <script src="toast.js"></script>
+  <script src="my-clubs.js"></script>
+</body>
+</html>

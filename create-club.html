@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Campus Connect - Create Club</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="theme-v2.css" />
+</head>
+<body>
+  <header class="site-header">
+    <nav class="navbar">
+      <h2 class="logo">Campus Connect</h2>
+      <ul class="nav-links active-desktop">
+        <li><a href="index.html">Public Home</a></li>
+        <li><a href="my-clubs.html">My Clubs</a></li>
+        <li><a href="notifications.html">Notifications</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="admin-container modern-page-container">
+    <section class="admin-hero modern-page-hero">
+      <div>
+        <p class="eyebrow">Club Creation Permission</p>
+        <h1>Create New Club</h1>
+        <p>Submit club details for Super Admin approval. Once approved, you will become the Club Admin.</p>
+      </div>
+    </section>
+
+    <section class="admin-card modern-directory-card">
+      <div class="admin-card-header">
+        <h3>Club Details Form</h3>
+        <p id="clubRequestStatusText">Loading request...</p>
+      </div>
+
+      <form id="clubCreationForm" class="hidden modern-form-panel">
+        <div class="form-grid">
+          <div class="form-group">
+            <label for="clubName">Club Name</label>
+            <input type="text" id="clubName" required />
+          </div>
+          <div class="form-group">
+            <label for="clubEmail">Club Email</label>
+            <input type="email" id="clubEmail" />
+          </div>
+          <div class="form-group">
+            <label for="clubPhone">Club Phone</label>
+            <input type="tel" id="clubPhone" />
+          </div>
+          <div class="form-group">
+            <label for="facultyCoordinator">Faculty Coordinator</label>
+            <input type="text" id="facultyCoordinator" />
+          </div>
+          <div class="form-group">
+            <label for="studentCoordinator">Student Coordinator</label>
+            <input type="text" id="studentCoordinator" />
+          </div>
+          <div class="form-group">
+            <label for="clubLogoUrl">Logo URL</label>
+            <input type="url" id="clubLogoUrl" />
+          </div>
+          <div class="form-group">
+            <label for="clubInstagram">Instagram URL</label>
+            <input type="url" id="clubInstagram" />
+          </div>
+          <div class="form-group">
+            <label for="clubWhatsapp">WhatsApp Link</label>
+            <input type="url" id="clubWhatsapp" />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="clubDescription">Club Description</label>
+          <textarea id="clubDescription" rows="5" required></textarea>
+        </div>
+
+        <button type="submit" class="register-btn full-width">Submit Club for Approval</button>
+        <div class="success-message hidden" id="clubCreationSuccess">✅ Club details submitted successfully.</div>
+      </form>
+    </section>
+  </main>
+
+  <script src="toast.js"></script>
+  <script src="create-club.js"></script>
+</body>
+</html>

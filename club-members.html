@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Campus Connect - Club Members</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="theme-v2.css" />
+</head>
+<body>
+  <header class="site-header">
+    <nav class="navbar">
+      <h2 class="logo">Campus Connect</h2>
+      <ul class="nav-links active-desktop">
+        <li><a href="index.html">Public Home</a></li>
+        <li><a href="admin.html">Admin Dashboard</a></li>
+        <li><a href="club-members.html">Club Members</a></li>
+        <li><a href="notifications.html">Notifications</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="admin-container">
+    <section class="admin-hero">
+      <p class="eyebrow">Club Admin</p>
+      <h1>Club Members</h1>
+      <p>View members of your club and assign club roles.</p>
+    </section>
+
+    <section class="admin-card">
+      <div class="admin-card-header with-action">
+        <div>
+          <h3>Members List</h3>
+          <p>Club admins can add Campus Connect users as club members and assign roles.</p>
+        </div>
+        <a href="admin.html" class="report-btn user-page-link">Back to Dashboard</a>
+      </div>
+
+      <form id="addMemberForm" class="member-add-form">
+        <div class="form-grid">
+          <div class="form-group">
+            <label for="memberEmail">User Email</label>
+            <input type="email" id="memberEmail" placeholder="student@example.com" required />
+          </div>
+          <div class="form-group">
+            <label for="memberRole">Club Role</label>
+            <select id="memberRole" required>
+              <option value="member">Member</option>
+              <option value="volunteer">Volunteer</option>
+              <option value="coordinator">Coordinator</option>
+              <option value="treasurer">Treasurer</option>
+              <option value="secretary">Secretary</option>
+              <option value="president">President</option>
+            </select>
+          </div>
+        </div>
+        <button type="submit" class="register-btn full-width">Add Member</button>
+      </form>
+
+      <div class="portal-user-controls">
+        <input type="text" id="memberSearch" placeholder="Search members..." />
+        <select id="memberRoleFilter">
+          <option value="all">All Roles</option>
+          <option value="club_admin">Club Admin</option>
+          <option value="president">President</option>
+          <option value="secretary">Secretary</option>
+          <option value="treasurer">Treasurer</option>
+          <option value="coordinator">Coordinator</option>
+          <option value="volunteer">Volunteer</option>
+          <option value="member">Member</option>
+        </select>
+      </div>
+
+      <div class="portal-user-list users-page-list" id="memberList">
+        <p class="loading-message small-loading">Loading members...</p>
+      </div>
+    </section>
+  </main>
+
+  <script src="toast.js"></script>
+  <script src="club-members.js"></script>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Campus Connect - Create New Club Permission</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="theme-v2.css" />
+</head>
+<body>
+  <header class="site-header">
+    <nav class="navbar">
+      <h2 class="logo">Campus Connect</h2>
+      <ul class="nav-links active-desktop">
+        <li><a href="index.html">Public Home</a></li>
+        <li><a href="admin.html">Admin Dashboard</a></li>
+        <li><a href="clubs.html">Clubs Directory</a></li>
+        <li><a href="club-requests.html">Club Requests</a></li>
+        <li><a href="notifications.html">Notifications</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="admin-container modern-page-container">
+    <section class="admin-hero modern-page-hero">
+      <div>
+        <p class="eyebrow">Super Admin • New Club</p>
+        <h1>Grant Club Creation Permission</h1>
+        <p>Select a student/user and grant permission to submit details for creating a new club.</p>
+      </div>
+      <div class="page-hero-actions">
+        <a href="clubs.html" class="secondary-btn btn-like">Back to Clubs</a>
+      </div>
+    </section>
+
+    <section class="admin-card modern-directory-card">
+      <div class="admin-card-header with-action">
+        <div>
+          <h3>Select Student/User</h3>
+          <p>Only selected users will receive a notification with a Create Club button.</p>
+        </div>
+      </div>
+
+      <div class="event-form-note">
+        Workflow: Super Admin grants permission → Student receives notification → Student submits club details → Super Admin approves → Student becomes Club Admin.
+      </div>
+
+      <div class="directory-toolbar">
+        <input type="text" id="permissionUserSearch" placeholder="Search users by name, email, department, roll number..." />
+        <select id="permissionRoleFilter">
+          <option value="student">Students Only</option>
+          <option value="all">All Users</option>
+          <option value="clubadmin">Club Admins</option>
+          <option value="coordinator">Coordinators</option>
+        </select>
+      </div>
+
+      <div class="portal-user-list users-page-list modern-directory-list" id="permissionUserList">
+        <p class="loading-message small-loading">Loading users...</p>
+      </div>
+    </section>
+  </main>
+
+  <script src="toast.js"></script>
+  <script src="grant-club-permission.js"></script>
+</body>
+</html>

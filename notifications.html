@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Campus Connect - Notifications</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="theme-v2.css" />
+</head>
+<body>
+  <header class="site-header">
+    <nav class="navbar">
+      <h2 class="logo">Campus Connect</h2>
+      <ul class="nav-links active-desktop">
+        <li><a href="index.html">Public Home</a></li>
+        <li><a href="my-clubs.html">My Clubs</a></li>
+        <li id="notificationsAdminLink" class="hidden"><a href="admin.html">Admin Dashboard</a></li>
+        <li><a href="notifications.html">Notifications</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="admin-container modern-page-container">
+    <section class="admin-hero modern-page-hero notification-hero">
+      <div>
+        <p class="eyebrow">Messages and Requests</p>
+        <h1>Notifications</h1>
+        <p>Track club permissions, approval updates, system messages, and important Campus Connect alerts.</p>
+      </div>
+      <div class="page-hero-actions">
+        <button class="secondary-btn btn-like" id="markAllReadBtn">Mark All as Read</button>
+      </div>
+    </section>
+
+    <section class="admin-card modern-directory-card">
+      <div class="admin-card-header with-action">
+        <div>
+          <h3>My Notifications</h3>
+          <p id="notificationSubText">Login to view notifications.</p>
+        </div>
+      </div>
+
+      <div class="notification-list modern-directory-list" id="notificationList">
+        <p class="loading-message small-loading">Loading notifications...</p>
+      </div>
+    </section>
+  </main>
+
+  <script src="toast.js"></script>
+  <script src="notifications.js"></script>
+</body>
+</html>

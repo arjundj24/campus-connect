@@ -1,0 +1,195 @@
+/* =========================================================
+   Campus Connect Lightweight 3D Theme
+   Smooth version designed to avoid lag.
+   Keep this after theme-v2.css.
+   ========================================================= */
+
+   :root {
+    --light-depth-shadow: 0 14px 34px rgba(15, 23, 42, 0.12);
+    --light-depth-shadow-hover: 0 20px 46px rgba(15, 23, 42, 0.18);
+    --light-blue-glow: rgba(37, 99, 235, 0.16);
+  }
+  
+  body {
+    background:
+      radial-gradient(circle at 10% 0%, rgba(37, 99, 235, 0.12), transparent 28rem),
+      radial-gradient(circle at 90% 8%, rgba(124, 58, 237, 0.10), transparent 28rem),
+      linear-gradient(180deg, #eef5ff 0%, #f8fbff 50%, #eef4ff 100%) !important;
+  }
+  
+  .site-header {
+    background: rgba(15, 23, 42, 0.88) !important;
+    box-shadow: 0 10px 28px rgba(15, 23, 42, 0.16) !important;
+  }
+  
+  .hero-panel,
+  .modern-hero-card,
+  .admin-card,
+  .student-card,
+  .event-card,
+  .club-card,
+  .quick-info-card,
+  .platform-card,
+  .role-card,
+  .calendar-card,
+  .timeline-item,
+  .portal-user-card,
+  .notification-card,
+  .registration-manage-card,
+  .club-name-row,
+  .club-event-detail-card,
+  .admin-stat-card {
+    box-shadow: var(--light-depth-shadow) !important;
+    transition:
+      transform 0.22s ease,
+      box-shadow 0.22s ease,
+      border-color 0.22s ease !important;
+    will-change: transform;
+  }
+  
+  .hero-panel:hover,
+  .modern-hero-card:hover,
+  .admin-card:hover,
+  .student-card:hover,
+  .event-card:hover,
+  .club-card:hover,
+  .quick-info-card:hover,
+  .platform-card:hover,
+  .role-card:hover,
+  .calendar-card:hover,
+  .timeline-item:hover,
+  .portal-user-card:hover,
+  .notification-card:hover,
+  .registration-manage-card:hover,
+  .club-name-row:hover,
+  .club-event-detail-card:hover,
+  .admin-stat-card:hover {
+    transform: translateY(-5px) !important;
+    box-shadow: var(--light-depth-shadow-hover) !important;
+  }
+  
+  .event-card:hover,
+  .club-card:hover,
+  .platform-card:hover {
+    transform: translateY(-6px) scale(1.01) !important;
+  }
+  
+  .btn,
+  .btn-like,
+  .register-btn,
+  .details-btn,
+  .report-btn,
+  .manage-action-btn,
+  .create-event-btn,
+  .approve-btn,
+  .reject-btn,
+  .changes-btn,
+  .publish-btn,
+  .logout-admin-btn,
+  .calendar-small-btn,
+  .nav-auth-btn {
+    transition:
+      transform 0.2s ease,
+      box-shadow 0.2s ease,
+      background 0.2s ease !important;
+  }
+  
+  .btn:hover,
+  .btn-like:hover,
+  .register-btn:hover,
+  .details-btn:hover,
+  .report-btn:hover,
+  .manage-action-btn:hover,
+  .create-event-btn:hover,
+  .approve-btn:hover,
+  .reject-btn:hover,
+  .changes-btn:hover,
+  .publish-btn:hover,
+  .logout-admin-btn:hover,
+  .calendar-small-btn:hover,
+  .nav-auth-btn:hover {
+    transform: translateY(-2px) !important;
+    box-shadow: 0 12px 26px rgba(37, 99, 235, 0.18) !important;
+  }
+  
+  .btn:active,
+  .btn-like:active,
+  .register-btn:active,
+  .details-btn:active,
+  .report-btn:active,
+  .manage-action-btn:active,
+  .create-event-btn:active,
+  .approve-btn:active,
+  .reject-btn:active,
+  .changes-btn:active,
+  .publish-btn:active,
+  .logout-admin-btn:active,
+  .calendar-small-btn:active,
+  .nav-auth-btn:active {
+    transform: translateY(0) scale(0.98) !important;
+  }
+  
+  .modal-overlay,
+  .confirm-modal-overlay {
+    background: rgba(15, 23, 42, 0.66) !important;
+  }
+  
+  .modal-box,
+  .confirm-modal-box {
+    box-shadow: 0 24px 56px rgba(15, 23, 42, 0.22) !important;
+    animation: lightModalIn 0.22s ease both !important;
+  }
+  
+  .toast {
+    box-shadow: 0 18px 42px rgba(15, 23, 42, 0.18) !important;
+  }
+  
+  input:focus,
+  select:focus,
+  textarea:focus {
+    box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.12) !important;
+  }
+  
+  @keyframes lightModalIn {
+    from {
+      opacity: 0;
+      transform: translateY(14px) scale(0.98);
+    }
+  
+    to {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  }
+  
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation: none !important;
+      transition: none !important;
+      transform: none !important;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .hero-panel:hover,
+    .modern-hero-card:hover,
+    .admin-card:hover,
+    .student-card:hover,
+    .event-card:hover,
+    .club-card:hover,
+    .quick-info-card:hover,
+    .platform-card:hover,
+    .role-card:hover,
+    .calendar-card:hover,
+    .timeline-item:hover,
+    .portal-user-card:hover,
+    .notification-card:hover,
+    .registration-manage-card:hover,
+    .club-name-row:hover,
+    .club-event-detail-card:hover,
+    .admin-stat-card:hover {
+      transform: none !important;
+    }
+  }

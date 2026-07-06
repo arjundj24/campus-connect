@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Campus Connect - Event Participants</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="theme-v2.css" />
+</head>
+<body>
+  <header class="site-header">
+    <nav class="navbar">
+      <h2 class="logo">Campus Connect</h2>
+      <ul class="nav-links active-desktop">
+        <li><a href="index.html">Public Home</a></li>
+        <li><a href="admin.html">Admin Dashboard</a></li>
+        <li><a href="clubs.html">Clubs Directory</a></li>
+        <li><a href="notifications.html">Notifications</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="admin-container modern-page-container">
+    <section class="admin-hero modern-page-hero">
+      <div>
+        <p class="eyebrow">Participants</p>
+        <h1 id="participantsEventTitle">Loading Participants...</h1>
+        <p id="participantsEventSubtitle">Please wait while participant details are loaded.</p>
+      </div>
+    </section>
+
+    <section class="admin-card registrations-management-card modern-list-card">
+      <div class="admin-card-header with-action">
+        <div>
+          <h3>Participant List</h3>
+          <p>View registered students and export or print the list.</p>
+        </div>
+        <div class="report-actions">
+          <button class="report-btn" id="printParticipantsBtn">Print List</button>
+          <button class="report-btn" id="exportParticipantsCsvBtn">Export CSV</button>
+          <button class="report-btn" id="exportParticipantsPdfBtn">Export PDF</button>
+        </div>
+      </div>
+
+      <div class="directory-toolbar">
+        <input type="text" id="participantSearch" placeholder="Search participants..." />
+        <select id="participantPaymentFilter">
+          <option value="all">All Payment Status</option>
+          <option value="not_required">Free / Not Required</option>
+          <option value="pending">Pending</option>
+          <option value="verified">Verified</option>
+          <option value="rejected">Rejected</option>
+        </select>
+      </div>
+
+      <div class="registration-management-list modern-directory-list" id="participantsList">
+        <p class="loading-message small-loading">Loading participants...</p>
+      </div>
+    </section>
+  </main>
+
+  <script src="toast.js"></script>
+  <script src="event-participants.js"></script>
+</body>
+</html>

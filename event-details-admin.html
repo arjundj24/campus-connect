@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Campus Connect - Event Details</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="theme-v2.css" />
+</head>
+<body>
+  <header class="site-header">
+    <nav class="navbar">
+      <h2 class="logo">Campus Connect</h2>
+      <ul class="nav-links active-desktop">
+        <li><a href="index.html">Public Home</a></li>
+        <li><a href="admin.html">Admin Dashboard</a></li>
+        <li><a href="clubs.html">Clubs Directory</a></li>
+        <li><a href="notifications.html">Notifications</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="admin-container modern-page-container">
+    <section class="admin-hero modern-page-hero">
+      <div>
+        <p class="eyebrow">Event Control</p>
+        <h1 id="eventTitle">Loading Event...</h1>
+        <p id="eventSubtitle">Please wait while event details are loaded.</p>
+      </div>
+    </section>
+
+    <section class="modern-detail-grid">
+      <div class="admin-card detail-info-card">
+        <div class="admin-card-header">
+          <h3>Event Information</h3>
+          <p>Complete details of the selected event.</p>
+        </div>
+        <div class="details-list modern-details-list" id="eventInfoBox">
+          <p>Loading...</p>
+        </div>
+      </div>
+
+      <div class="admin-card detail-summary-card">
+        <div class="admin-card-header">
+          <h3>Registration Summary</h3>
+          <p>Overview of participants registered for this event.</p>
+        </div>
+        <div class="admin-stats-grid compact-stats">
+          <div class="admin-stat-card modern-stat-card">
+            <span class="stat-icon">👥</span>
+            <h3 id="eventRegistrationCount">0</h3>
+            <p>Total</p>
+          </div>
+          <div class="admin-stat-card modern-stat-card success-stat">
+            <span class="stat-icon">✅</span>
+            <h3 id="eventPresentCount">0</h3>
+            <p>Present</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="admin-card registrations-management-card modern-list-card">
+      <div class="admin-card-header with-action">
+        <div>
+          <h3>Event Operations</h3>
+          <p>Open participant lists, print reports, or assign tasks to club members.</p>
+        </div>
+        <div class="report-actions">
+          <a class="report-btn user-page-link" id="viewParticipantsPageLink" href="#">Open Participants Page</a>
+          <a class="report-btn user-page-link" id="assignTasksPageLink" href="#">Assign Tasks</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="toast.js"></script>
+  <script src="event-details-admin.js"></script>
+</body>
+</html>

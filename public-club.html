@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Campus Connect - Club</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="theme-v2.css" />
+</head>
+<body>
+  <header class="site-header">
+    <nav class="navbar">
+      <h2 class="logo">Campus Connect</h2>
+      <ul class="nav-links active-desktop">
+        <li><a href="index.html">Public Home</a></li>
+        <li><a href="index.html#clubs">Clubs</a></li>
+        <li><a href="index.html#events">Events</a></li>
+        <li><a href="notifications.html">Notifications</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="admin-container modern-page-container">
+    <section class="admin-hero modern-page-hero">
+      <div>
+        <p class="eyebrow">Club Profile</p>
+        <h1 id="publicClubTitle">Loading Club...</h1>
+        <p id="publicClubDescription">Please wait while club details load.</p>
+      </div>
+      <div class="page-hero-actions">
+        <a href="index.html#clubs" class="secondary-btn btn-like">Back to Clubs</a>
+      </div>
+    </section>
+
+    <section class="modern-detail-grid">
+      <div class="admin-card detail-info-card">
+        <div class="admin-card-header">
+          <h3>About This Club</h3>
+          <p>Coordinator details and communication links.</p>
+        </div>
+        <div class="details-list modern-details-list" id="publicClubInfoBox">
+          <p>Loading...</p>
+        </div>
+      </div>
+
+      <div class="admin-card detail-summary-card">
+        <div class="admin-card-header">
+          <h3>Published Events</h3>
+          <p>Events from this club currently available to students.</p>
+        </div>
+        <div class="club-event-detail-list modern-directory-list" id="publicClubEventsList">
+          <p class="loading-message small-loading">Loading events...</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="toast.js"></script>
+  <script src="public-club.js"></script>
+</body>
+</html>

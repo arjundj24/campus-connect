@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Campus Connect - Admin Dashboard</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="theme-v2.css" />
+  
+</head>
+<body>
+  <header class="site-header">
+    <nav class="navbar">
+      <h2 class="logo">Campus Connect</h2>
+
+      <ul class="nav-links active-desktop" id="adminNavLinks">
+        <li><a href="index.html">Public Home</a></li>
+        <li><a href="notifications.html" class="notification-nav-link">Notifications <span class="notification-badge hidden" id="adminNotificationBadge">0</span></a></li>
+        <li id="superAdminNavItem"><a href="#superAdminDashboard">Super Admin</a></li>
+        <li id="clubAdminNavItem"><a href="#clubAdminDashboard">Club Admin</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="admin-container modern-admin-container">
+    <section class="admin-hero modern-admin-hero">
+      <div>
+        <p class="eyebrow">Campus Connect Control Center</p>
+        <h1>Admin Dashboard</h1>
+        <p>
+          Manage clubs, approvals, calendars, members, registrations, reports, and event operations from one modern dashboard.
+        </p>
+      </div>
+    </section>
+
+    <section class="admin-login-panel" id="adminLoginPanel">
+      <div class="admin-card login-card modern-login-card">
+        <h2>Login Required</h2>
+        <p>All users must login from the public home page. Admin dashboard access appears based on your role.</p>
+        <a href="index.html" class="register-btn full-width user-page-link">Go to Public Login</a>
+      </div>
+    </section>
+
+    <section class="admin-user-bar hidden modern-user-bar" id="adminUserBar">
+      <div>
+        <p>Logged in as <strong id="adminUserName">Admin</strong></p>
+        <span id="adminUserRole" class="role-badge club-badge">Role</span>
+      </div>
+      <button type="button" class="logout-admin-btn" id="adminLogoutBtn">Logout</button>
+    </section>
+
+    <div id="adminDashboardContent" class="hidden">
+  
+
+      <section id="superAdminDashboard" class="dashboard-panel">
+        <div class="dashboard-heading modern-dashboard-heading">
+          <div>
+            <p class="section-kicker">Super Admin</p>
+            <h2>College-wide Overview</h2>
+            <p>Approve events, review schedules, manage clubs, and monitor campus-wide activity.</p>
+          </div>
+          <span class="role-badge super-badge">Super Admin</span>
+        </div>
+
+        <div class="admin-stats-grid modern-stats-grid">
+          <div class="admin-stat-card modern-stat-card">
+            <span class="stat-icon">🏛️</span>
+            <h3>0</h3>
+            <p>Total Clubs</p>
+          </div>
+          <div class="admin-stat-card modern-stat-card">
+            <span class="stat-icon">📅</span>
+            <h3>0</h3>
+            <p>Total Events</p>
+          </div>
+          <div class="admin-stat-card modern-stat-card warning-stat">
+            <span class="stat-icon">⏳</span>
+            <h3>0</h3>
+            <p>Pending Approvals</p>
+          </div>
+          <div class="admin-stat-card modern-stat-card danger-stat">
+            <span class="stat-icon">⚠️</span>
+            <h3>0</h3>
+            <p>Venue Conflicts</p>
+          </div>
+        </div>
+
+        <section class="admin-card modern-quick-actions-card">
+          <div class="admin-card-header">
+            <h3>Quick Actions</h3>
+            <p>Frequently used super admin tools.</p>
+          </div>
+
+          <div class="quick-action-grid">
+            <a href="clubs.html" class="quick-action-card">
+              <span>🏛️</span>
+              <div>
+                <strong>Clubs Directory</strong>
+                <p>View clubs, create club permissions, and review club requests.</p>
+              </div>
+            </a>
+            <a href="users.html" class="quick-action-card">
+              <span>👥</span>
+              <div>
+                <strong>Portal Users</strong>
+                <p>View students, club admins, coordinators, and super admins.</p>
+              </div>
+            </a>
+            <a href="club-requests.html" class="quick-action-card">
+              <span>📝</span>
+              <div>
+                <strong>Club Requests</strong>
+                <p>Approve or reject new club creation requests.</p>
+              </div>
+            </a>
+            <a href="notifications.html" class="quick-action-card">
+              <span>🔔</span>
+              <div>
+                <strong>Notifications</strong>
+                <p>View permission requests and system messages.</p>
+              </div>
+            </a>
+          </div>
+        </section>
+
+        <div class="dashboard-grid modern-dashboard-grid">
+          <section class="admin-card large-card modern-calendar-card">
+            <div class="admin-card-header with-action">
+              <div>
+                <h3>College Event Calendar</h3>
+                <p>All events from every club are shown here.</p>
+              </div>
+              <div class="calendar-legend-inline">
+                <span class="legend pending"></span> Pending
+                <span class="legend approved"></span> Approved
+                <span class="legend published"></span> Published
+                <span class="legend conflict"></span> Issue
+              </div>
+            </div>
+
+            <div class="admin-calendar-header">
+              <button class="calendar-small-btn" id="superPrevMonthBtn">‹</button>
+              <h4 id="superCalendarMonth">Month Year</h4>
+              <button class="calendar-small-btn" id="superNextMonthBtn">›</button>
+            </div>
+
+            <div class="admin-calendar" id="superCalendarGrid">
+              <div class="loading-message">Login to load college calendar.</div>
+            </div>
+          </section>
+
+          <section class="admin-card modern-approval-card">
+            <div class="admin-card-header">
+              <h3>Pending Event Approvals</h3>
+              <p>Review submitted events and take action.</p>
+            </div>
+
+            <div class="approval-list">
+              <div class="approval-item">
+                <p>Loading pending approvals...</p>
+              </div>
+            </div>
+          </section>
+        </div>
+      </section>
+
+      <section id="clubAdminDashboard" class="dashboard-panel hidden">
+        <div class="dashboard-heading modern-dashboard-heading">
+          <div>
+            <p class="section-kicker">Club Admin</p>
+            <h2>Club Operations Dashboard</h2>
+            <p>Create events, publish approved events, manage members, assign tasks, and track registrations.</p>
+          </div>
+          <span class="role-badge club-badge">Club Admin</span>
+        </div>
+
+        <div class="admin-stats-grid modern-stats-grid">
+          <div class="admin-stat-card modern-stat-card">
+            <span class="stat-icon">📅</span>
+            <h3>0</h3>
+            <p>My Club Events</p>
+          </div>
+          <div class="admin-stat-card modern-stat-card warning-stat">
+            <span class="stat-icon">⏳</span>
+            <h3>0</h3>
+            <p>Pending Approval</p>
+          </div>
+          <div class="admin-stat-card modern-stat-card">
+            <span class="stat-icon">✅</span>
+            <h3>0</h3>
+            <p>Approved</p>
+          </div>
+          <div class="admin-stat-card modern-stat-card success-stat">
+            <span class="stat-icon">🚀</span>
+            <h3>0</h3>
+            <p>Published</p>
+          </div>
+        </div>
+
+        <section class="admin-card modern-quick-actions-card">
+          <div class="admin-card-header with-action">
+            <div>
+              <h3>Club Quick Actions</h3>
+              <p>Manage your club events, members, and operational tasks.</p>
+            </div>
+            <button class="create-event-btn">+ Create Event</button>
+          </div>
+
+          <div class="quick-action-grid">
+            <a href="club-members.html" class="quick-action-card">
+              <span>👥</span>
+              <div>
+                <strong>Club Members</strong>
+                <p>View members and assign club roles.</p>
+              </div>
+            </a>
+            <a href="notifications.html" class="quick-action-card">
+              <span>🔔</span>
+              <div>
+                <strong>Notifications</strong>
+                <p>Check updates and system messages.</p>
+              </div>
+            </a>
+            <a href="my-clubs.html" class="quick-action-card">
+              <span>🏛️</span>
+              <div>
+                <strong>My Clubs</strong>
+                <p>View your club membership and assigned tasks.</p>
+              </div>
+            </a>
+            <a href="index.html#events" class="quick-action-card">
+              <span>🎟️</span>
+              <div>
+                <strong>Register for Events</strong>
+                <p>Club admins can still participate in campus events.</p>
+              </div>
+            </a>
+          </div>
+        </section>
+
+        <div class="dashboard-grid modern-dashboard-grid">
+          <section class="admin-card large-card modern-calendar-card">
+            <div class="admin-card-header with-action">
+              <div>
+                <h3>My Club Calendar</h3>
+                <p>Only events belonging to your club are shown.</p>
+              </div>
+            </div>
+
+            <div class="admin-calendar-header">
+              <button class="calendar-small-btn" id="clubPrevMonthBtn">‹</button>
+              <h4 id="clubCalendarMonth">Month Year</h4>
+              <button class="calendar-small-btn" id="clubNextMonthBtn">›</button>
+            </div>
+
+            <div class="admin-calendar club-admin-calendar" id="clubCalendarGrid">
+              <div class="loading-message">Login to load club calendar.</div>
+            </div>
+          </section>
+
+          <section class="admin-card modern-summary-card">
+            <div class="admin-card-header">
+              <h3>Registrations Summary</h3>
+              <p>Quick overview of your club event registrations.</p>
+            </div>
+
+            <div class="registration-summary-list">
+              <div class="summary-row">
+                <span>Total Registrations</span>
+                <strong>0</strong>
+              </div>
+            </div>
+          </section>
+        </div>
+
+        <section class="admin-card modern-events-list-card">
+          <div class="admin-card-header with-action">
+            <div>
+              <h3>My Club Events</h3>
+              <p>Open event details, assign tasks, publish approved events, or resubmit requested changes.</p>
+            </div>
+          </div>
+
+          <div class="club-calendar-list">
+            <div class="club-calendar-item pending-left">
+              <div>
+                <h4>Loading events...</h4>
+                <p>Please wait while your events are loaded.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+
+      </section>
+    </div>
+  </main>
+
+  <div class="modal-overlay hidden" id="createEventModal">
+    <div class="modal-box registration-box">
+      <button class="close-btn" id="closeCreateEventModal">×</button>
+      <h2 id="createEventModalTitle">Create New Event</h2>
+      <p class="modal-club" id="createEventModalSubtitle">Club Admin creates an event. Status will be Pending Approval.</p>
+
+      <form id="createEventForm">
+        <div class="form-grid">
+          <div class="form-group">
+            <label for="eventTitle">Event Title</label>
+            <input type="text" id="eventTitle" placeholder="Example: Web Development Workshop" required />
+          </div>
+
+          <div class="form-group">
+            <label for="eventClub">Club</label>
+            <select id="eventClub" required>
+              <option value="Coding Club">Coding Club</option>
+              <option value="IEEE">IEEE</option>
+              <option value="IEDC">IEDC</option>
+              <option value="NSS">NSS</option>
+              <option value="Arts Club">Arts Club</option>
+              <option value="Sports Club">Sports Club</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="eventType">Event Type</label>
+            <select id="eventType" required>
+              <option value="Workshop">Workshop</option>
+              <option value="Hackathon">Hackathon</option>
+              <option value="Coding Competition">Coding Competition</option>
+              <option value="Tech Talk">Tech Talk</option>
+              <option value="Seminar">Seminar</option>
+              <option value="Cultural Event">Cultural Event</option>
+              <option value="Sports Event">Sports Event</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="eventVenue">Venue</label>
+            <input type="text" id="eventVenue" placeholder="Example: Seminar Hall" required />
+          </div>
+
+          <div class="form-group">
+            <label for="eventDate">Date</label>
+            <input type="date" id="eventDate" required />
+          </div>
+
+          <div class="form-group">
+            <label for="eventStartTime">Start Time</label>
+            <input type="time" id="eventStartTime" required />
+          </div>
+
+          <div class="form-group">
+            <label for="eventEndTime">End Time</label>
+            <input type="time" id="eventEndTime" required />
+          </div>
+
+          <div class="form-group">
+            <label for="eventRegistrationType">Registration Type</label>
+            <select id="eventRegistrationType" required>
+              <option value="individual">Individual</option>
+              <option value="team">Team</option>
+              <option value="both">Both</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="team-size-fields hidden" id="teamSizeFields">
+          <h3>Team Settings</h3>
+          <div class="form-grid">
+            <div class="form-group">
+              <label for="minTeamSize">Minimum Team Size</label>
+              <input type="number" id="minTeamSize" min="1" placeholder="Example: 2" />
+            </div>
+
+            <div class="form-group">
+              <label for="maxTeamSize">Maximum Team Size</label>
+              <input type="number" id="maxTeamSize" min="1" placeholder="Example: 4" />
+            </div>
+          </div>
+        </div>
+
+        <div class="form-grid">
+          <div class="form-group">
+            <label for="eventPaymentType">Payment Type</label>
+            <select id="eventPaymentType" required>
+              <option value="free">Free Event</option>
+              <option value="paid">Paid Event</option>
+            </select>
+          </div>
+
+          <div class="form-group payment-create-field hidden" id="feeField">
+            <label for="eventFee">Registration Fee</label>
+            <input type="number" id="eventFee" min="0" placeholder="Example: 100" />
+          </div>
+
+          <div class="form-group payment-create-field hidden" id="upiField">
+            <label for="eventUpiId">UPI ID</label>
+            <input type="text" id="eventUpiId" placeholder="Example: clubname@upi" />
+          </div>
+
+          <div class="form-group">
+            <label for="eventWhatsapp">WhatsApp Group Link</label>
+            <input type="url" id="eventWhatsapp" placeholder="https://chat.whatsapp.com/..." />
+          </div>
+
+          <div class="form-group">
+            <label for="eventContactEmail">Contact Email</label>
+            <input type="email" id="eventContactEmail" placeholder="club@example.com" />
+          </div>
+
+          <div class="form-group">
+            <label for="eventContactPhone">Contact Phone</label>
+            <input type="tel" id="eventContactPhone" placeholder="Coordinator phone number" />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="eventDescription">Event Description</label>
+          <textarea id="eventDescription" rows="4" placeholder="Explain the event, purpose, and what participants will do" required></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="eventRules">Rules / Instructions</label>
+          <textarea id="eventRules" rows="4" placeholder="Enter rules, eligibility, team size, reporting time, etc."></textarea>
+        </div>
+
+        <div class="event-form-note">
+          After submission, this event will be sent to the Super Admin as <strong>Pending Approval</strong>.
+          Students cannot see it until the Super Admin approves it and the Club Admin publishes it.
+        </div>
+
+        <button type="submit" class="register-btn full-width" id="createEventSubmitBtn">Submit Event for Approval</button>
+      </form>
+
+      <div class="success-message hidden" id="createEventSuccess">
+        ✅ Event created successfully as Pending Approval. Backend saving will be added later.
+      </div>
+    </div>
+  </div>
+
+  <script src="toast.js"></script>
+  <script src="access-state.js"></script>
+  <script src="admin.js"></script>
+</body>
+</html>

@@ -1,0 +1,3053 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #f4f7fb;
+  color: #111827;
+  line-height: 1.6;
+}
+
+.site-header {
+  background: #111827;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.navbar {
+  width: min(1150px, 92%);
+  margin: auto;
+  padding: 16px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  color: #ffffff;
+  font-size: 24px;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 22px;
+}
+
+.nav-links a {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.nav-links a:hover {
+  color: #38bdf8;
+}
+
+.nav-auth-btn {
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  background: rgba(255, 255, 255, 0.12);
+  color: white;
+  padding: 8px 12px;
+  border-radius: 999px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.nav-auth-btn:hover {
+  background: rgba(255, 255, 255, 0.22);
+}
+
+.student-user-pill {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: white;
+  font-weight: bold;
+}
+
+.student-user-pill button {
+  border: none;
+  background: #fee2e2;
+  color: #991b1b;
+  padding: 7px 10px;
+  border-radius: 999px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.profile-actions {
+  display: flex;
+  gap: 10px;
+  margin: 16px 0;
+  flex-wrap: wrap;
+}
+
+.form-group input:disabled,
+.form-group select:disabled,
+.form-group textarea:disabled {
+  background: #f3f4f6;
+  color: #6b7280;
+  cursor: not-allowed;
+}
+
+.menu-btn {
+  display: none;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+.section {
+  width: min(1150px, 92%);
+  margin: auto;
+  padding: 70px 0;
+}
+
+.hero {
+  min-height: 88vh;
+  display: grid;
+  grid-template-columns: 1.4fr 0.8fr;
+  gap: 40px;
+  align-items: center;
+}
+
+.eyebrow {
+  color: #2563eb;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 12px;
+}
+
+.hero h1 {
+  font-size: 58px;
+  line-height: 1.1;
+  margin-bottom: 18px;
+}
+
+.hero-text {
+  color: #4b5563;
+  font-size: 19px;
+  max-width: 760px;
+}
+
+.hero-actions {
+  margin-top: 28px;
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  padding: 13px 22px;
+  border-radius: 10px;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.primary-btn {
+  background: #2563eb;
+  color: white;
+}
+
+.primary-btn:hover {
+  background: #1d4ed8;
+}
+
+.secondary-btn {
+  border: 2px solid #2563eb;
+  color: #2563eb;
+}
+
+.secondary-btn:hover {
+  background: #dbeafe;
+}
+
+.hero-panel,
+.feature-card,
+.event-card,
+.calendar-card,
+.role-card {
+  background: white;
+  border-radius: 18px;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
+}
+
+.hero-panel {
+  padding: 34px;
+  text-align: center;
+}
+
+.panel-icon {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  background: #dbeafe;
+  display: grid;
+  place-items: center;
+  font-size: 52px;
+  margin: 0 auto 22px;
+}
+
+.hero-panel h3 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.hero-panel p {
+  color: #6b7280;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 36px;
+  margin-bottom: 12px;
+}
+
+.section-subtitle {
+  text-align: center;
+  color: #6b7280;
+  max-width: 760px;
+  margin: 0 auto 35px;
+  font-size: 17px;
+}
+
+.left-title,
+.left-subtitle {
+  text-align: left;
+  margin-left: 0;
+}
+
+.quick-info-grid,
+.club-grid,
+.feature-grid,
+.role-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+.quick-info-card,
+.club-card,
+.student-card,
+.feature-card,
+.role-card {
+  background: white;
+  border-radius: 18px;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
+  padding: 24px;
+}
+
+.quick-info-card {
+  text-align: center;
+}
+
+.quick-info-card h3 {
+  font-size: 38px;
+  color: #2563eb;
+}
+
+.quick-info-card p,
+.club-card p,
+.dashboard-help {
+  color: #6b7280;
+}
+
+.club-icon {
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  background: #dbeafe;
+  display: grid;
+  place-items: center;
+  font-size: 28px;
+  margin-bottom: 14px;
+}
+
+.club-card h3 {
+  color: #2563eb;
+  margin-bottom: 8px;
+}
+
+.club-meta {
+  display: grid;
+  gap: 6px;
+  margin-top: 14px;
+  color: #374151;
+  font-size: 14px;
+}
+
+.student-dashboard-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr 1fr;
+  gap: 22px;
+  align-items: start;
+}
+
+.profile-card {
+  grid-row: span 2;
+}
+
+.student-list {
+  display: grid;
+  gap: 12px;
+  max-height: 520px;
+  overflow-y: auto;
+  padding-right: 6px;
+}
+
+.student-dashboard-item {
+  background: #f8fafc;
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
+  padding: 14px;
+}
+
+.student-dashboard-item h4 {
+  color: #111827;
+  margin-bottom: 5px;
+}
+
+.student-dashboard-item p {
+  color: #6b7280;
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+.certificate-item {
+  border-left: 5px solid #16a34a;
+}
+
+.feature-card span {
+  font-size: 34px;
+}
+
+.feature-card h3,
+.role-card h3 {
+  margin: 14px 0 10px;
+  color: #2563eb;
+}
+
+.feature-card p,
+.role-card li {
+  color: #4b5563;
+}
+
+.role-card ul {
+  padding-left: 20px;
+}
+
+.section-heading-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+  align-items: flex-start;
+  margin-bottom: 28px;
+}
+
+.filter-row {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.filter-row input,
+.filter-row select {
+  padding: 12px 14px;
+  border: 1px solid #d1d5db;
+  border-radius: 10px;
+  font-size: 15px;
+}
+
+.event-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+.event-card {
+  padding: 24px;
+  position: relative;
+}
+
+.event-status {
+  display: inline-block;
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: bold;
+  margin-bottom: 14px;
+}
+
+.event-status.published {
+  background: #dcfce7;
+  color: #16a34a;
+}
+
+.event-card h3 {
+  font-size: 22px;
+  margin-bottom: 6px;
+}
+
+.club-name {
+  color: #2563eb;
+  font-weight: bold;
+  margin-bottom: 12px;
+}
+
+.event-card p {
+  color: #4b5563;
+}
+
+.event-meta {
+  display: grid;
+  gap: 8px;
+  margin: 18px 0;
+  color: #374151;
+  font-size: 14px;
+}
+
+.event-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.register-btn,
+.details-btn {
+  width: 100%;
+  border: none;
+  border-radius: 10px;
+  padding: 12px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.register-btn {
+  background: #2563eb;
+  color: white;
+}
+
+.register-btn:hover {
+  background: #1d4ed8;
+}
+
+.details-btn {
+  background: #dbeafe;
+  color: #1d4ed8;
+}
+
+.details-btn:hover {
+  background: #bfdbfe;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.workflow-section {
+  text-align: center;
+}
+
+.timeline {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.timeline-item {
+  background: white;
+  border-radius: 18px;
+  padding: 24px;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
+}
+
+.timeline-number {
+  width: 44px;
+  height: 44px;
+  margin: 0 auto 15px;
+  background: #2563eb;
+  color: white;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-weight: bold;
+}
+
+.timeline-item h3 {
+  margin-bottom: 10px;
+}
+
+.timeline-item p {
+  color: #4b5563;
+}
+
+.calendar-layout {
+  display: grid;
+  grid-template-columns: 1.4fr 0.8fr;
+  gap: 24px;
+}
+
+.calendar-card {
+  padding: 24px;
+}
+
+.calendar-card h3 {
+  color: #2563eb;
+  margin-bottom: 10px;
+}
+
+.calendar-card p {
+  color: #6b7280;
+  margin-bottom: 18px;
+}
+
+.mini-calendar {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 8px;
+}
+
+.mini-calendar div {
+  text-align: center;
+  font-weight: bold;
+  color: #6b7280;
+}
+
+.mini-calendar span {
+  min-height: 42px;
+  border-radius: 10px;
+  background: #f3f4f6;
+  display: grid;
+  place-items: center;
+  font-weight: bold;
+}
+
+.event-dot.pending {
+  background: #fef3c7;
+  color: #ca8a04;
+}
+
+.event-dot.approved {
+  background: #dbeafe;
+  color: #2563eb;
+}
+
+.event-dot.published {
+  background: #dcfce7;
+  color: #16a34a;
+}
+
+.event-dot.conflict {
+  background: #fee2e2;
+  color: #dc2626;
+}
+
+.legend-list {
+  list-style: none;
+  display: grid;
+  gap: 14px;
+  margin-top: 18px;
+}
+
+.legend-list li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #374151;
+}
+
+.legend {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.legend.pending {
+  background: #fef3c7;
+}
+
+.legend.approved {
+  background: #dbeafe;
+}
+
+.legend.published {
+  background: #dcfce7;
+}
+
+.legend.conflict {
+  background: #fee2e2;
+}
+
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.72);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  z-index: 200;
+}
+
+.modal-box {
+  background: white;
+  width: min(650px, 96%);
+  max-height: 90vh;
+  overflow-y: auto;
+  border-radius: 18px;
+  padding: 28px;
+  position: relative;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
+}
+
+.registration-box {
+  width: min(850px, 96%);
+}
+
+.close-btn {
+  position: absolute;
+  top: 16px;
+  right: 18px;
+  width: 34px;
+  height: 34px;
+  border: none;
+  border-radius: 50%;
+  background: #fee2e2;
+  color: #dc2626;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.modal-box h2 {
+  margin-bottom: 6px;
+}
+
+.modal-club {
+  color: #2563eb;
+  font-weight: bold;
+  margin-bottom: 14px;
+}
+
+.modal-details {
+  background: #f8fafc;
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
+  padding: 16px;
+  margin: 18px 0;
+  display: grid;
+  gap: 8px;
+}
+
+.auth-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.auth-card {
+  background: #f8fafc;
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
+  padding: 20px;
+}
+
+.auth-card h3 {
+  margin-bottom: 14px;
+  color: #2563eb;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+}
+
+.form-group {
+  margin-bottom: 16px;
+}
+
+.form-group label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 6px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid #d1d5db;
+  border-radius: 10px;
+  font-size: 15px;
+  font-family: Arial, sans-serif;
+}
+
+.team-fields,
+.payment-fields,
+.team-size-fields {
+  background: #f8fafc;
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
+  padding: 18px;
+  margin-bottom: 18px;
+}
+
+.payment-note {
+  color: #4b5563;
+  margin: 8px 0 16px;
+}
+
+.event-form-note {
+  background: #eff6ff;
+  color: #1d4ed8;
+  border-left: 5px solid #2563eb;
+  border-radius: 12px;
+  padding: 14px;
+  margin-bottom: 18px;
+}
+
+.success-message {
+  margin-top: 18px;
+  background: #dcfce7;
+  color: #16a34a;
+  padding: 14px;
+  border-radius: 12px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.admin-container {
+  width: min(1200px, 92%);
+  margin: auto;
+  padding: 40px 0 80px;
+}
+
+.admin-hero {
+  background: linear-gradient(135deg, #111827, #1e3a8a);
+  color: white;
+  border-radius: 22px;
+  padding: 42px;
+  margin-bottom: 24px;
+}
+
+.admin-hero h1 {
+  font-size: 42px;
+  margin-bottom: 12px;
+}
+
+.admin-hero p {
+  max-width: 760px;
+  color: #dbeafe;
+}
+
+.admin-login-panel {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 24px;
+}
+
+.login-card {
+  width: min(520px, 100%);
+}
+
+.login-card h2 {
+  margin-bottom: 8px;
+}
+
+.login-card p {
+  color: #6b7280;
+  margin-bottom: 18px;
+}
+
+.auth-message {
+  font-weight: bold;
+  margin-bottom: 14px;
+  text-align: center;
+}
+
+.auth-message.error {
+  color: #dc2626;
+}
+
+.auth-message.success {
+  color: #16a34a;
+}
+
+.admin-user-bar {
+  background: white;
+  border-radius: 18px;
+  padding: 18px 22px;
+  display: flex;
+  justify-content: space-between;
+  gap: 18px;
+  align-items: center;
+  margin-bottom: 24px;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
+}
+
+.logout-admin-btn {
+  border: none;
+  background: #fee2e2;
+  color: #991b1b;
+  border-radius: 10px;
+  padding: 10px 16px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.logout-admin-btn:hover {
+  background: #fecaca;
+}
+
+.dashboard-switcher {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 24px;
+}
+
+.dashboard-tab {
+  border: none;
+  background: white;
+  color: #2563eb;
+  padding: 12px 18px;
+  border-radius: 999px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.08);
+}
+
+.dashboard-tab.active {
+  background: #2563eb;
+  color: white;
+}
+
+.dashboard-panel {
+  display: block;
+}
+
+.dashboard-heading {
+  background: white;
+  border-radius: 18px;
+  padding: 24px;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  align-items: center;
+  margin-bottom: 22px;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
+}
+
+.dashboard-heading h2 {
+  font-size: 28px;
+  margin-bottom: 6px;
+}
+
+.dashboard-heading p {
+  color: #6b7280;
+}
+
+.role-badge {
+  padding: 8px 14px;
+  border-radius: 999px;
+  font-weight: bold;
+  white-space: nowrap;
+}
+
+.super-badge {
+  background: #fee2e2;
+  color: #dc2626;
+}
+
+.club-badge {
+  background: #dbeafe;
+  color: #2563eb;
+}
+
+.admin-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+  margin-bottom: 24px;
+}
+
+.admin-stat-card {
+  background: white;
+  border-radius: 16px;
+  padding: 22px;
+  text-align: center;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
+}
+
+.admin-stat-card h3 {
+  font-size: 34px;
+  color: #2563eb;
+}
+
+.admin-stat-card p {
+  color: #6b7280;
+  font-weight: bold;
+}
+
+.warning-stat h3 {
+  color: #ca8a04;
+}
+
+.danger-stat h3 {
+  color: #dc2626;
+}
+
+.success-stat h3 {
+  color: #16a34a;
+}
+
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 0.8fr;
+  gap: 24px;
+}
+
+.admin-card {
+  background: white;
+  border-radius: 18px;
+  padding: 24px;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
+}
+
+.admin-card-header {
+  margin-bottom: 18px;
+}
+
+.admin-card-header.with-action {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  align-items: flex-start;
+}
+
+.admin-card-header h3 {
+  color: #111827;
+  margin-bottom: 6px;
+}
+
+.admin-card-header p {
+  color: #6b7280;
+}
+
+.admin-calendar-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 14px;
+}
+
+.calendar-small-btn {
+  border: none;
+  background: #2563eb;
+  color: white;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.admin-calendar {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 8px;
+}
+
+.calendar-day-name {
+  text-align: center;
+  color: #6b7280;
+  font-weight: bold;
+  padding: 8px;
+}
+
+.admin-calendar-cell {
+  min-height: 82px;
+  background: #f8fafc;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 8px;
+  font-weight: bold;
+}
+
+.admin-calendar-cell span {
+  display: block;
+  font-size: 11px;
+  margin-top: 6px;
+}
+
+.muted-cell {
+  opacity: 0.4;
+}
+
+.pending-cell {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.approved-cell {
+  background: #dbeafe;
+  color: #1d4ed8;
+}
+
+.published-cell {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.conflict-cell {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+.approval-list,
+.club-calendar-list,
+.registration-summary-list {
+  display: grid;
+  gap: 14px;
+}
+
+.approval-item,
+.club-calendar-item,
+.summary-row {
+  background: #f8fafc;
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
+  padding: 16px;
+}
+
+.approval-item p,
+.club-calendar-item p {
+  color: #6b7280;
+  margin: 4px 0 12px;
+}
+
+.approval-note {
+  background: #fff7ed;
+  color: #9a3412 !important;
+  border-left: 4px solid #f97316;
+  border-radius: 8px;
+  padding: 8px 10px;
+  margin-top: 8px !important;
+}
+
+.approval-actions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.approve-btn,
+.reject-btn,
+.changes-btn,
+.publish-btn,
+.create-event-btn {
+  border: none;
+  border-radius: 8px;
+  padding: 9px 12px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.approve-btn,
+.publish-btn,
+.create-event-btn {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.reject-btn {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+.changes-btn {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.club-calendar-item {
+  display: flex;
+  justify-content: space-between;
+  gap: 14px;
+  align-items: center;
+  border-left-width: 6px;
+}
+
+.pending-left {
+  border-left-color: #ca8a04;
+}
+
+.approved-left {
+  border-left-color: #2563eb;
+}
+
+.published-left {
+  border-left-color: #16a34a;
+}
+
+.status-pill {
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: bold;
+  white-space: nowrap;
+}
+
+.pending-pill {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.published-pill {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.summary-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.registrations-management-card {
+  margin-top: 24px;
+}
+
+.hierarchy-layout {
+  display: grid;
+  grid-template-columns: 0.75fr 0.9fr 1.6fr;
+  gap: 18px;
+  align-items: start;
+}
+
+.club-hierarchy {
+  grid-template-columns: 0.9fr 1.7fr;
+}
+
+.hierarchy-column {
+  background: #f8fafc;
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
+  padding: 16px;
+}
+
+.hierarchy-column h4 {
+  color: #111827;
+  margin-bottom: 4px;
+}
+
+.hierarchy-help {
+  color: #6b7280;
+  font-size: 13px;
+  margin-bottom: 12px;
+}
+
+.hierarchy-list {
+  display: grid;
+  gap: 10px;
+  max-height: 520px;
+  overflow-y: auto;
+  padding-right: 4px;
+}
+
+.hierarchy-item {
+  width: 100%;
+  border: 1px solid #e5e7eb;
+  background: white;
+  border-radius: 12px;
+  padding: 12px;
+  text-align: left;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.hierarchy-item:hover,
+.hierarchy-item.active {
+  border-color: #2563eb;
+  background: #eff6ff;
+}
+
+.hierarchy-item strong {
+  display: block;
+  color: #111827;
+  margin-bottom: 4px;
+}
+
+.hierarchy-item span {
+  color: #6b7280;
+  font-size: 13px;
+}
+
+.small-loading {
+  padding: 14px;
+  font-size: 13px;
+}
+
+.selected-event-summary {
+  background: #eff6ff;
+  border-left: 5px solid #2563eb;
+  border-radius: 12px;
+  padding: 14px;
+  margin-bottom: 16px;
+}
+
+.selected-event-summary h4 {
+  color: #1d4ed8;
+  margin-bottom: 6px;
+}
+
+.selected-event-summary p {
+  color: #374151;
+  font-size: 14px;
+}
+
+.registration-management-list {
+  display: grid;
+  gap: 16px;
+}
+
+.portal-users-card {
+  margin-top: 24px;
+}
+
+.portal-user-controls {
+  display: grid;
+  grid-template-columns: 1fr 180px;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.portal-user-controls input,
+.portal-user-controls select {
+  padding: 11px 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 10px;
+  font-size: 14px;
+}
+
+.portal-user-list {
+  display: grid;
+  gap: 12px;
+  max-height: 430px;
+  overflow-y: auto;
+  padding-right: 6px;
+}
+
+.users-page-list {
+  max-height: 680px;
+}
+
+.users-stats-grid {
+  margin: 20px 0;
+}
+
+.user-page-link {
+  text-decoration: none;
+  display: inline-block;
+}
+
+.users-page-card {
+  align-items: stretch;
+}
+
+.user-card-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: flex-end;
+  min-width: 130px;
+}
+
+.member-add-form {
+  background: #f8fafc;
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
+  padding: 18px;
+  margin-bottom: 18px;
+}
+
+.club-name-list,
+.club-event-detail-list,
+.details-list,
+.notification-list {
+  display: grid;
+  gap: 12px;
+}
+
+.notification-nav-link {
+  position: relative;
+}
+
+.notification-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 18px;
+  height: 18px;
+  padding: 0 5px;
+  margin-left: 4px;
+  border-radius: 999px;
+  background: #dc2626;
+  color: white;
+  font-size: 11px;
+  font-weight: bold;
+}
+
+.notification-card {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  align-items: flex-start;
+  background: #f8fafc;
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
+  padding: 16px;
+}
+
+.unread-notification {
+  border-left: 5px solid #2563eb;
+  background: #eff6ff;
+}
+
+.notification-card h3 {
+  color: #111827;
+  margin-bottom: 6px;
+}
+
+.notification-card p {
+  color: #4b5563;
+  margin-bottom: 6px;
+}
+
+.notification-card span {
+  color: #6b7280;
+  font-size: 13px;
+}
+
+.notification-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 140px;
+}
+
+.club-name-row:hover,
+.club-event-detail-card:hover {
+  border-color: #2563eb;
+  background: #eff6ff;
+}
+
+.compact-stats {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.portal-user-card,
+.club-name-row,
+.club-event-detail-card {
+  display: flex;
+  justify-content: space-between;
+  gap: 14px;
+  align-items: flex-start;
+  background: #f8fafc;
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
+  padding: 14px;
+  text-decoration: none;
+  color: inherit;
+}
+
+.portal-user-card h4,
+.club-name-row h3,
+.club-event-detail-card h3 {
+  color: #111827;
+  margin-bottom: 4px;
+}
+
+.portal-user-card p,
+.club-name-row p,
+.club-event-detail-card p {
+  color: #6b7280;
+  font-size: 14px;
+  margin-bottom: 4px;
+}
+
+.wide-hierarchy-column .registration-management-list {
+  max-height: 650px;
+  overflow-y: auto;
+  padding-right: 6px;
+}
+
+.hierarchy-list::-webkit-scrollbar,
+.wide-hierarchy-column .registration-management-list::-webkit-scrollbar {
+  width: 8px;
+}
+
+.hierarchy-list::-webkit-scrollbar-thumb,
+.wide-hierarchy-column .registration-management-list::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 999px;
+}
+
+.hierarchy-list::-webkit-scrollbar-track,
+.wide-hierarchy-column .registration-management-list::-webkit-scrollbar-track {
+  background: #f1f5f9;
+  border-radius: 999px;
+}
+
+.registration-manage-card {
+  background: #f8fafc;
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
+  padding: 16px;
+}
+
+.registration-manage-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 14px;
+}
+
+.registration-manage-header h4 {
+  color: #111827;
+  margin-bottom: 4px;
+}
+
+.registration-manage-header p,
+.registration-detail-line {
+  color: #6b7280;
+  font-size: 14px;
+}
+
+.registration-status-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  margin-top: 14px;
+}
+
+.registration-control-group label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 6px;
+  font-size: 14px;
+}
+
+.registration-control-group select {
+  width: 100%;
+  padding: 9px 10px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+}
+
+.checkbox-row {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  margin-bottom: 7px;
+  font-size: 14px;
+}
+
+.manage-action-btn {
+  border: none;
+  background: #2563eb;
+  color: white;
+  padding: 9px 12px;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  width: 100%;
+  margin-top: 6px;
+}
+
+.manage-action-btn:hover {
+  background: #1d4ed8;
+}
+
+.payment-pending-badge,
+.payment-verified-badge,
+.payment-rejected-badge,
+.payment-free-badge {
+  display: inline-block;
+  padding: 5px 9px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.payment-pending-badge {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.payment-verified-badge,
+.payment-free-badge {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.payment-rejected-badge {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+.report-actions,
+.event-admin-actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.report-btn {
+  border: none;
+  background: #dbeafe;
+  color: #1d4ed8;
+  padding: 10px 14px;
+  border-radius: 10px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.report-btn:hover {
+  background: #bfdbfe;
+}
+
+.writeup-textarea {
+  width: 100%;
+  padding: 14px;
+  border: 1px solid #d1d5db;
+  border-radius: 12px;
+  font-family: Arial, sans-serif;
+  font-size: 15px;
+  line-height: 1.6;
+  resize: vertical;
+  margin: 16px 0;
+}
+
+.site-footer {
+  background: #111827;
+  color: white;
+  text-align: center;
+  padding: 22px;
+}
+
+.hidden {
+  display: none;
+}
+
+@media (max-width: 900px) {
+  .hero,
+  .calendar-layout,
+  .section-heading-row {
+    grid-template-columns: 1fr;
+    flex-direction: column;
+  }
+
+  .quick-info-grid,
+  .club-grid,
+  .student-dashboard-grid,
+  .feature-grid,
+  .event-grid,
+  .role-grid,
+  .timeline,
+  .admin-stats-grid,
+  .dashboard-grid,
+  .hierarchy-layout,
+  .club-hierarchy {
+    grid-template-columns: 1fr;
+  }
+
+  .nav-links {
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 64px;
+    width: 100%;
+    background: #111827;
+    flex-direction: column;
+    text-align: center;
+    padding: 18px;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .menu-btn {
+    display: block;
+  }
+
+  .hero {
+    text-align: center;
+  }
+
+  .hero h1 {
+    font-size: 42px;
+  }
+
+  .hero-actions {
+    justify-content: center;
+  }
+
+  .left-title,
+  .left-subtitle {
+    text-align: center;
+  }
+
+  .filter-row {
+    width: 100%;
+  }
+
+  .filter-row input,
+  .filter-row select,
+  .portal-user-controls input,
+  .portal-user-controls select {
+    width: 100%;
+  }
+
+  .portal-user-controls {
+    grid-template-columns: 1fr;
+  }
+
+  .event-actions,
+  .form-grid,
+  .auth-grid,
+  .registration-status-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .dashboard-heading,
+  .admin-card-header.with-action,
+  .club-calendar-item,
+  .summary-row,
+  .registration-manage-header,
+  .portal-user-card,
+  .user-card-actions {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@media print {
+  .site-header,
+  .admin-hero,
+  .portal-user-controls,
+  .report-actions,
+  .admin-card-header p {
+    display: none !important;
+  }
+
+  body {
+    background: white;
+  }
+
+  .admin-container {
+    width: 100%;
+    padding: 0;
+  }
+
+  .admin-card,
+  .registration-manage-card {
+    box-shadow: none;
+    border: 1px solid #d1d5db;
+  }
+}
+
+@media (max-width: 520px) {
+  .hero h1 {
+    font-size: 34px;
+  }
+
+  .modal-box {
+    padding: 22px;
+  }
+}
+
+/* =========================================================
+   Campus Connect Modern UI Upgrade
+   Added: modern gradients, glass effects, animations, hover
+   effects, cleaner cards, better forms, and responsive polish.
+   ========================================================= */
+
+:root {
+  --cc-primary: #2563eb;
+  --cc-primary-dark: #1d4ed8;
+  --cc-primary-soft: #dbeafe;
+  --cc-secondary: #7c3aed;
+  --cc-accent: #06b6d4;
+  --cc-success: #16a34a;
+  --cc-warning: #ca8a04;
+  --cc-danger: #dc2626;
+  --cc-bg: #eef4ff;
+  --cc-bg-2: #f8fbff;
+  --cc-card: rgba(255, 255, 255, 0.86);
+  --cc-card-solid: #ffffff;
+  --cc-text: #0f172a;
+  --cc-muted: #64748b;
+  --cc-border: rgba(148, 163, 184, 0.28);
+  --cc-shadow-sm: 0 8px 22px rgba(15, 23, 42, 0.08);
+  --cc-shadow-md: 0 16px 38px rgba(15, 23, 42, 0.12);
+  --cc-shadow-lg: 0 24px 70px rgba(15, 23, 42, 0.18);
+  --cc-radius: 20px;
+  --cc-radius-sm: 12px;
+  --cc-transition: 0.25s ease;
+}
+
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  background:
+    radial-gradient(circle at top left, rgba(37, 99, 235, 0.16), transparent 32rem),
+    radial-gradient(circle at top right, rgba(124, 58, 237, 0.14), transparent 30rem),
+    linear-gradient(180deg, var(--cc-bg), var(--cc-bg-2));
+  color: var(--cc-text);
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+  overflow-x: hidden;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(rgba(37, 99, 235, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(37, 99, 235, 0.035) 1px, transparent 1px);
+  background-size: 34px 34px;
+  mask-image: linear-gradient(to bottom, black, transparent 78%);
+  z-index: -1;
+}
+
+::selection {
+  background: var(--cc-primary);
+  color: #ffffff;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #e2e8f0;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, var(--cc-primary), var(--cc-secondary));
+  border-radius: 999px;
+}
+
+.site-header {
+  background: rgba(15, 23, 42, 0.78);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 12px 32px rgba(15, 23, 42, 0.16);
+}
+
+.navbar {
+  min-height: 70px;
+}
+
+.logo {
+  background: linear-gradient(135deg, #ffffff, #93c5fd, #c4b5fd);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  letter-spacing: -0.5px;
+}
+
+.nav-links a,
+.nav-auth-btn {
+  position: relative;
+  transition: color var(--cc-transition), background var(--cc-transition), transform var(--cc-transition);
+}
+
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -7px;
+  width: 0;
+  height: 2px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #38bdf8, #a78bfa);
+  transition: width var(--cc-transition);
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+.nav-auth-btn {
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.16);
+}
+
+.nav-auth-btn:hover,
+.student-user-pill button:hover,
+.logout-admin-btn:hover {
+  transform: translateY(-1px);
+}
+
+.section,
+.admin-container {
+  animation: pageFadeUp 0.65s ease both;
+}
+
+.hero,
+.admin-hero {
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before,
+.admin-hero::before {
+  content: "";
+  position: absolute;
+  width: 420px;
+  height: 420px;
+  right: -140px;
+  top: -150px;
+  background: radial-gradient(circle, rgba(96, 165, 250, 0.28), transparent 68%);
+  pointer-events: none;
+}
+
+.hero::after,
+.admin-hero::after {
+  content: "";
+  position: absolute;
+  width: 280px;
+  height: 280px;
+  left: -120px;
+  bottom: -120px;
+  background: radial-gradient(circle, rgba(124, 58, 237, 0.18), transparent 70%);
+  pointer-events: none;
+}
+
+.hero h1,
+.admin-hero h1 {
+  letter-spacing: -1.8px;
+  background: linear-gradient(135deg, #0f172a, #1d4ed8, #7c3aed);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.admin-hero h1,
+.admin-hero .eyebrow,
+.admin-hero p {
+  color: #ffffff;
+  background: none;
+  -webkit-text-fill-color: initial;
+}
+
+.admin-hero {
+  background:
+    linear-gradient(135deg, rgba(15, 23, 42, 0.96), rgba(30, 64, 175, 0.92)),
+    radial-gradient(circle at top right, rgba(6, 182, 212, 0.4), transparent 28rem);
+  box-shadow: var(--cc-shadow-lg);
+}
+
+.eyebrow {
+  color: var(--cc-primary);
+}
+
+.hero-text,
+.section-subtitle,
+.dashboard-help,
+.hero-panel p,
+.calendar-card p,
+.feature-card p,
+.event-card p,
+.role-card li {
+  color: var(--cc-muted);
+}
+
+.btn,
+.register-btn,
+.details-btn,
+.report-btn,
+.manage-action-btn,
+.dashboard-tab,
+.create-event-btn,
+.approve-btn,
+.reject-btn,
+.changes-btn,
+.publish-btn,
+.calendar-small-btn,
+.logout-admin-btn {
+  transition: transform var(--cc-transition), box-shadow var(--cc-transition), background var(--cc-transition), border-color var(--cc-transition), color var(--cc-transition);
+}
+
+.btn:hover,
+.register-btn:hover,
+.details-btn:hover,
+.report-btn:hover,
+.manage-action-btn:hover,
+.dashboard-tab:hover,
+.create-event-btn:hover,
+.approve-btn:hover,
+.reject-btn:hover,
+.changes-btn:hover,
+.publish-btn:hover,
+.calendar-small-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--cc-shadow-sm);
+}
+
+.primary-btn,
+.register-btn,
+.manage-action-btn,
+.calendar-small-btn,
+.dashboard-tab.active {
+  background: linear-gradient(135deg, var(--cc-primary), var(--cc-secondary));
+  color: #ffffff;
+  box-shadow: 0 10px 24px rgba(37, 99, 235, 0.25);
+}
+
+.primary-btn:hover,
+.register-btn:hover,
+.manage-action-btn:hover,
+.calendar-small-btn:hover {
+  background: linear-gradient(135deg, var(--cc-primary-dark), #6d28d9);
+}
+
+.secondary-btn,
+.details-btn,
+.report-btn {
+  background: rgba(219, 234, 254, 0.9);
+  color: var(--cc-primary-dark);
+  border: 1px solid rgba(37, 99, 235, 0.14);
+}
+
+.hero-panel,
+.feature-card,
+.event-card,
+.calendar-card,
+.role-card,
+.quick-info-card,
+.club-card,
+.student-card,
+.admin-card,
+.admin-stat-card,
+.timeline-item,
+.modal-box {
+  background: var(--cc-card);
+  border: 1px solid rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  box-shadow: var(--cc-shadow-sm);
+  transition: transform var(--cc-transition), box-shadow var(--cc-transition), border-color var(--cc-transition);
+}
+
+.hero-panel:hover,
+.feature-card:hover,
+.event-card:hover,
+.calendar-card:hover,
+.role-card:hover,
+.quick-info-card:hover,
+.club-card:hover,
+.student-card:hover,
+.admin-card:hover,
+.timeline-item:hover,
+.club-name-row:hover,
+.club-event-detail-card:hover,
+.portal-user-card:hover,
+.registration-manage-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--cc-shadow-md);
+  border-color: rgba(37, 99, 235, 0.22);
+}
+
+.panel-icon,
+.club-icon {
+  background: linear-gradient(135deg, #dbeafe, #ede9fe);
+  box-shadow: inset 0 0 0 1px rgba(37, 99, 235, 0.1);
+}
+
+.section-title,
+.admin-card-header h3,
+.dashboard-heading h2,
+.student-card h3,
+.calendar-card h3,
+.feature-card h3,
+.role-card h3,
+.club-card h3,
+.event-card h3 {
+  letter-spacing: -0.7px;
+}
+
+.event-card,
+.club-card,
+.feature-card,
+.role-card,
+.student-card,
+.admin-card,
+.registration-manage-card,
+.portal-user-card,
+.club-name-row,
+.club-event-detail-card,
+.notification-card {
+  border: 1px solid var(--cc-border);
+}
+
+.event-status,
+.status-pill,
+.payment-pending-badge,
+.payment-verified-badge,
+.payment-rejected-badge,
+.payment-free-badge,
+.role-badge,
+.notification-badge {
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.35);
+}
+
+.event-status.published,
+.payment-verified-badge,
+.payment-free-badge,
+.published-pill,
+.success-stat h3 {
+  background: linear-gradient(135deg, #dcfce7, #bbf7d0);
+  color: #166534;
+}
+
+.payment-pending-badge,
+.pending-pill,
+.warning-stat h3 {
+  background: linear-gradient(135deg, #fef3c7, #fde68a);
+  color: #92400e;
+}
+
+.payment-rejected-badge,
+.danger-stat h3,
+.super-badge {
+  background: linear-gradient(135deg, #fee2e2, #fecaca);
+  color: #991b1b;
+}
+
+.club-badge,
+.approved-cell,
+.report-btn {
+  background: linear-gradient(135deg, #dbeafe, #bfdbfe);
+  color: #1d4ed8;
+}
+
+input,
+select,
+textarea,
+.form-group input,
+.form-group select,
+.form-group textarea,
+.filter-row input,
+.filter-row select,
+.portal-user-controls input,
+.portal-user-controls select {
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid rgba(148, 163, 184, 0.45);
+  color: var(--cc-text);
+  outline: none;
+  transition: border-color var(--cc-transition), box-shadow var(--cc-transition), background var(--cc-transition);
+}
+
+input:focus,
+select:focus,
+textarea:focus,
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus,
+.filter-row input:focus,
+.filter-row select:focus,
+.portal-user-controls input:focus,
+.portal-user-controls select:focus {
+  border-color: var(--cc-primary);
+  box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.14);
+  background: #ffffff;
+}
+
+.form-group input:disabled,
+.form-group select:disabled,
+.form-group textarea:disabled {
+  background: rgba(226, 232, 240, 0.72);
+  border-color: rgba(148, 163, 184, 0.32);
+}
+
+.modal-overlay {
+  background: rgba(2, 6, 23, 0.68);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  animation: fadeIn 0.2s ease both;
+}
+
+.modal-box {
+  animation: modalPop 0.28s ease both;
+}
+
+.close-btn:hover {
+  transform: rotate(90deg) scale(1.05);
+}
+
+.admin-calendar-cell,
+.mini-calendar span {
+  transition: transform var(--cc-transition), box-shadow var(--cc-transition);
+}
+
+.admin-calendar-cell:hover,
+.mini-calendar span:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--cc-shadow-sm);
+}
+
+.pending-cell,
+.event-dot.pending {
+  background: linear-gradient(135deg, #fef3c7, #fde68a);
+  color: #92400e;
+}
+
+.approved-cell,
+.event-dot.approved {
+  background: linear-gradient(135deg, #dbeafe, #bfdbfe);
+  color: #1d4ed8;
+}
+
+.published-cell,
+.event-dot.published {
+  background: linear-gradient(135deg, #dcfce7, #bbf7d0);
+  color: #166534;
+}
+
+.conflict-cell,
+.event-dot.conflict {
+  background: linear-gradient(135deg, #fee2e2, #fecaca);
+  color: #991b1b;
+}
+
+.notification-card,
+.portal-user-card,
+.club-name-row,
+.club-event-detail-card,
+.registration-manage-card,
+.student-dashboard-item {
+  transition: transform var(--cc-transition), box-shadow var(--cc-transition), border-color var(--cc-transition), background var(--cc-transition);
+}
+
+.unread-notification {
+  background: linear-gradient(135deg, #eff6ff, #eef2ff);
+  border-left: 5px solid var(--cc-primary);
+}
+
+.loading-message {
+  border: 1px solid var(--cc-border);
+  background: var(--cc-card);
+  backdrop-filter: blur(14px);
+}
+
+.clickable-card {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
+.student-dashboard-grid,
+.quick-info-grid,
+.club-grid,
+.event-grid,
+.feature-grid,
+.role-grid,
+.dashboard-grid,
+.admin-stats-grid {
+  animation: pageFadeUp 0.55s ease both;
+}
+
+@keyframes pageFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes modalPop {
+  from {
+    opacity: 0;
+    transform: translateY(18px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* =========================================================
+   Phase 3: Modern page templates for club/event detail pages
+   ========================================================= */
+
+.modern-page-container {
+  animation: pageFadeUp 0.55s ease both;
+}
+
+.modern-page-hero {
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+  align-items: flex-end;
+}
+
+.page-hero-actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  position: relative;
+  z-index: 1;
+}
+
+.btn-like {
+  text-decoration: none;
+  display: inline-block;
+  padding: 12px 18px;
+  border-radius: 12px;
+  font-weight: 800;
+}
+
+.modern-directory-card,
+.modern-list-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.modern-directory-card::before,
+.modern-list-card::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--cc-primary), var(--cc-secondary), var(--cc-accent));
+}
+
+.directory-toolbar {
+  display: grid;
+  grid-template-columns: 1fr 190px;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+.modern-directory-list {
+  max-height: 680px;
+  overflow-y: auto;
+  padding-right: 6px;
+}
+
+.modern-detail-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 24px;
+  margin-bottom: 24px;
+}
+
+.detail-info-card,
+.detail-summary-card {
+  min-height: 100%;
+}
+
+.modern-details-list {
+  background: rgba(248, 250, 252, 0.72);
+  border: 1px solid var(--cc-border);
+  border-radius: 16px;
+  padding: 18px;
+}
+
+.modern-details-list p {
+  padding: 9px 0;
+  border-bottom: 1px solid rgba(148, 163, 184, 0.2);
+  color: #334155;
+}
+
+.modern-details-list p:last-child {
+  border-bottom: none;
+}
+
+.modern-details-list strong {
+  color: #0f172a;
+}
+
+.club-name-row,
+.club-event-detail-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.club-name-row::before,
+.club-event-detail-card::before,
+.portal-user-card::before,
+.registration-manage-card::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: linear-gradient(180deg, var(--cc-primary), var(--cc-secondary));
+  opacity: 0;
+  transition: opacity var(--cc-transition);
+}
+
+.club-name-row:hover::before,
+.club-event-detail-card:hover::before,
+.portal-user-card:hover::before,
+.registration-manage-card:hover::before {
+  opacity: 1;
+}
+
+.club-event-detail-card,
+.club-name-row {
+  align-items: center;
+}
+
+.club-event-detail-card h3,
+.club-name-row h3 {
+  letter-spacing: -0.4px;
+}
+
+.participant-print-card {
+  break-inside: avoid;
+}
+
+@media print {
+  .participant-print-card {
+    page-break-inside: avoid;
+  }
+}
+
+@media (max-width: 900px) {
+  .modern-page-hero {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .directory-toolbar,
+  .modern-detail-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* =========================================================
+   Phase 4: Modern notifications/users/requests/forms pages
+   ========================================================= */
+
+.notification-hero {
+  background:
+    linear-gradient(135deg, rgba(30, 64, 175, 0.94), rgba(14, 116, 144, 0.9)),
+    radial-gradient(circle at top right, rgba(125, 211, 252, 0.35), transparent 26rem);
+}
+
+.modern-form-panel {
+  margin-top: 18px;
+  background: rgba(248, 250, 252, 0.72);
+  border: 1px solid var(--cc-border);
+  border-radius: 18px;
+  padding: 20px;
+}
+
+.notification-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.notification-card::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 5px;
+  background: linear-gradient(180deg, var(--cc-primary), var(--cc-accent));
+  opacity: 0.15;
+}
+
+.unread-notification::before {
+  opacity: 1;
+}
+
+.notification-actions .report-btn,
+.notification-actions .details-btn {
+  text-align: center;
+  text-decoration: none;
+}
+
+.users-page-list,
+.notification-list {
+  min-height: 220px;
+}
+
+.portal-user-card,
+.notification-card {
+  animation: pageFadeUp 0.35s ease both;
+}
+
+.portal-user-card:nth-child(2),
+.notification-card:nth-child(2) { animation-delay: 0.03s; }
+.portal-user-card:nth-child(3),
+.notification-card:nth-child(3) { animation-delay: 0.06s; }
+.portal-user-card:nth-child(4),
+.notification-card:nth-child(4) { animation-delay: 0.09s; }
+
+.user-card-actions select,
+.registration-control-group select {
+  padding: 9px 10px;
+  border-radius: 10px;
+  border: 1px solid rgba(148, 163, 184, 0.45);
+  background: white;
+}
+
+.event-form-note {
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.7);
+}
+
+@media (max-width: 900px) {
+  .notification-card,
+  .portal-user-card {
+    flex-direction: column;
+  }
+
+  .notification-actions,
+  .user-card-actions {
+    width: 100%;
+    align-items: stretch;
+  }
+}
+
+/* =========================================================
+   Final Consistency Pass
+   Purpose: unify spacing, accessibility, page rhythm, and
+   interaction states across the complete Campus Connect app.
+   ========================================================= */
+
+html {
+  scroll-padding-top: 90px;
+}
+
+body {
+  min-height: 100vh;
+}
+
+button,
+a,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid rgba(37, 99, 235, 0.35);
+  outline-offset: 3px;
+}
+
+button:disabled,
+select:disabled,
+input:disabled,
+textarea:disabled {
+  opacity: 0.72;
+}
+
+button:disabled {
+  cursor: not-allowed;
+  transform: none !important;
+  box-shadow: none !important;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.site-header + main {
+  position: relative;
+}
+
+.modern-navbar,
+.navbar {
+  gap: 18px;
+}
+
+.nav-links {
+  align-items: center;
+}
+
+.nav-links a,
+.nav-auth-btn {
+  white-space: nowrap;
+}
+
+.section-kicker,
+.eyebrow {
+  font-size: 13px;
+  letter-spacing: 0.09em;
+}
+
+.modern-page-hero,
+.modern-admin-hero,
+.admin-hero {
+  margin-bottom: 28px;
+}
+
+.admin-card-header.with-action,
+.dashboard-heading,
+.modern-dashboard-heading {
+  align-items: flex-start;
+}
+
+.admin-card-header h3,
+.dashboard-heading h2,
+.student-card h3,
+.modern-page-hero h1,
+.admin-hero h1 {
+  line-height: 1.15;
+}
+
+.admin-card-header p,
+.dashboard-heading p,
+.modern-page-hero p,
+.admin-hero p {
+  max-width: 780px;
+}
+
+.modern-stats-grid .admin-stat-card,
+.quick-info-card {
+  min-height: 135px;
+}
+
+.stat-icon,
+.platform-icon {
+  user-select: none;
+}
+
+.event-card,
+.club-card,
+.platform-card,
+.quick-action-card,
+.club-name-row,
+.club-event-detail-card,
+.portal-user-card,
+.notification-card,
+.registration-manage-card,
+.student-dashboard-item {
+  will-change: transform;
+}
+
+.event-card h3,
+.club-card h3,
+.club-name-row h3,
+.club-event-detail-card h3,
+.portal-user-card h4,
+.registration-manage-card h4 {
+  overflow-wrap: anywhere;
+}
+
+.event-meta span,
+.club-meta span,
+.registration-detail-line,
+.details-list p,
+.modern-details-list p {
+  overflow-wrap: anywhere;
+}
+
+.report-actions,
+.event-admin-actions,
+.page-hero-actions,
+.profile-actions,
+.approval-actions {
+  align-items: center;
+}
+
+.report-btn,
+.user-page-link,
+.btn-like {
+  text-align: center;
+}
+
+.directory-toolbar,
+.portal-user-controls,
+.filter-row {
+  align-items: center;
+}
+
+.modern-directory-list,
+.student-list,
+.portal-user-list,
+.hierarchy-list,
+.wide-hierarchy-column .registration-management-list {
+  scrollbar-width: thin;
+  scrollbar-color: #94a3b8 #e2e8f0;
+}
+
+.empty-state-card {
+  background: var(--cc-card);
+  border: 1px dashed rgba(100, 116, 139, 0.35);
+  border-radius: 18px;
+  padding: 28px;
+  text-align: center;
+  color: var(--cc-muted);
+}
+
+.success-message,
+.event-form-note,
+.approval-note {
+  overflow-wrap: anywhere;
+}
+
+.admin-calendar {
+  overflow-x: auto;
+  padding-bottom: 4px;
+}
+
+.admin-calendar-cell {
+  min-width: 92px;
+}
+
+@media (max-width: 900px) {
+  .navbar {
+    min-height: 64px;
+  }
+
+  .nav-links.active-desktop {
+    display: flex;
+    position: static;
+    width: auto;
+    background: transparent;
+    flex-direction: row;
+    padding: 0;
+  }
+
+  .modern-hero-grid,
+  .modern-detail-grid,
+  .dashboard-grid,
+  .calendar-layout {
+    gap: 18px;
+  }
+
+  .admin-card,
+  .student-card,
+  .event-card,
+  .club-card {
+    padding: 20px;
+  }
+
+  .modern-page-hero,
+  .admin-hero {
+    padding: 30px;
+  }
+
+  .admin-calendar-cell {
+    min-width: 84px;
+  }
+}
+
+@media (max-width: 640px) {
+  .hero h1,
+  .modern-hero-content h1,
+  .modern-page-hero h1,
+  .admin-hero h1 {
+    font-size: 32px;
+  }
+
+  .section-title {
+    font-size: 28px;
+  }
+
+  .hero-actions,
+  .page-hero-actions,
+  .report-actions,
+  .event-admin-actions,
+  .profile-actions,
+  .approval-actions {
+    width: 100%;
+  }
+
+  .hero-actions .btn,
+  .page-hero-actions a,
+  .page-hero-actions button,
+  .report-actions a,
+  .report-actions button,
+  .event-admin-actions a,
+  .event-admin-actions button,
+  .profile-actions button,
+  .approval-actions button {
+    width: 100%;
+  }
+
+  .modal-box,
+  .registration-box {
+    width: 100%;
+    max-height: 92vh;
+  }
+
+  .student-user-pill {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+/* =========================================================
+   Phase 5: Toast Notification System
+   ========================================================= */
+
+.toast-container {
+  position: fixed;
+  top: 90px;
+  right: 22px;
+  z-index: 9999;
+  display: grid;
+  gap: 12px;
+  width: min(380px, calc(100vw - 32px));
+  pointer-events: none;
+}
+
+.toast {
+  pointer-events: auto;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 12px;
+  align-items: start;
+  padding: 14px 14px;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid rgba(148, 163, 184, 0.28);
+  box-shadow: 0 18px 45px rgba(15, 23, 42, 0.18);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  animation: toastSlideIn 0.28s ease both;
+  overflow: hidden;
+  position: relative;
+}
+
+.toast::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 5px;
+}
+
+.toast p {
+  margin: 0;
+  color: #1f2937;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.45;
+}
+
+.toast-icon {
+  font-size: 18px;
+  line-height: 1.2;
+}
+
+.toast-close {
+  border: none;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: rgba(15, 23, 42, 0.08);
+  color: #0f172a;
+  font-size: 18px;
+  cursor: pointer;
+  line-height: 1;
+}
+
+.toast-close:hover {
+  background: rgba(15, 23, 42, 0.14);
+}
+
+.toast-success::before {
+  background: #16a34a;
+}
+
+.toast-error::before {
+  background: #dc2626;
+}
+
+.toast-warning::before {
+  background: #ca8a04;
+}
+
+.toast-info::before {
+  background: #2563eb;
+}
+
+.toast-hide {
+  animation: toastSlideOut 0.25s ease both;
+}
+
+@keyframes toastSlideIn {
+  from {
+    opacity: 0;
+    transform: translateX(24px) translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0) translateY(0);
+  }
+}
+
+@keyframes toastSlideOut {
+  from {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateX(24px);
+  }
+}
+
+@media (max-width: 640px) {
+  .toast-container {
+    top: 76px;
+    right: 12px;
+    left: 12px;
+    width: auto;
+  }
+}
+
+/* =========================================================
+   Phase 5: Loading States
+   ========================================================= */
+
+.btn-loading,
+button.btn-loading,
+a.btn-loading {
+  position: relative;
+  pointer-events: none;
+  opacity: 0.78;
+  cursor: wait !important;
+}
+
+.btn-loading::before {
+  content: "";
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  margin-right: 8px;
+  border-radius: 50%;
+  border: 2px solid currentColor;
+  border-right-color: transparent;
+  vertical-align: -2px;
+  animation: buttonSpin 0.75s linear infinite;
+}
+
+@keyframes buttonSpin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* =========================================================
+   Phase 5: Confirmation Modal
+   ========================================================= */
+
+.confirm-modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  background: rgba(2, 6, 23, 0.68);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  animation: fadeIn 0.2s ease both;
+}
+
+.confirm-modal-box {
+  width: min(430px, 96%);
+  background: rgba(255, 255, 255, 0.94);
+  border: 1px solid rgba(255, 255, 255, 0.75);
+  border-radius: 22px;
+  padding: 28px;
+  text-align: center;
+  box-shadow: 0 24px 70px rgba(15, 23, 42, 0.22);
+  animation: modalPop 0.25s ease both;
+}
+
+.confirm-modal-icon {
+  width: 62px;
+  height: 62px;
+  margin: 0 auto 16px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #dbeafe, #ede9fe);
+  display: grid;
+  place-items: center;
+  font-size: 30px;
+}
+
+.confirm-modal-box h2 {
+  font-size: 24px;
+  color: #0f172a;
+  margin-bottom: 8px;
+}
+
+.confirm-modal-box p {
+  color: #64748b;
+  margin-bottom: 22px;
+}
+
+.confirm-modal-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.confirm-cancel-btn,
+.confirm-ok-btn {
+  border: none;
+  border-radius: 12px;
+  padding: 12px 16px;
+  font-weight: 800;
+  cursor: pointer;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+}
+
+.confirm-cancel-btn {
+  background: #e2e8f0;
+  color: #334155;
+}
+
+.confirm-ok-btn {
+  background: linear-gradient(135deg, #2563eb, #7c3aed);
+  color: #ffffff;
+}
+
+.confirm-danger {
+  background: linear-gradient(135deg, #dc2626, #b91c1c);
+}
+
+.confirm-warning {
+  background: linear-gradient(135deg, #ca8a04, #d97706);
+}
+
+.confirm-success {
+  background: linear-gradient(135deg, #16a34a, #15803d);
+}
+
+.confirm-cancel-btn:hover,
+.confirm-ok-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.14);
+}
+
+@media (max-width: 520px) {
+  .confirm-modal-actions {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* =========================================================
+   Phase 6.3: Standard Access / Empty States
+   ========================================================= */
+
+.access-state-card {
+  background: var(--cc-card);
+  border: 1px solid var(--cc-border);
+  border-radius: 22px;
+  padding: 34px;
+  text-align: center;
+  box-shadow: var(--cc-shadow-sm);
+  max-width: 720px;
+  margin: 0 auto;
+  animation: pageFadeUp 0.35s ease both;
+}
+
+.access-state-icon {
+  width: 72px;
+  height: 72px;
+  margin: 0 auto 18px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-size: 34px;
+  background: linear-gradient(135deg, #dbeafe, #ede9fe);
+  box-shadow: inset 0 0 0 1px rgba(37, 99, 235, 0.12);
+}
+
+.access-state-card h2 {
+  color: #0f172a;
+  font-size: 28px;
+  margin-bottom: 8px;
+}
+
+.access-state-card p {
+  color: var(--cc-muted);
+  max-width: 560px;
+  margin: 0 auto;
+}
+
+.access-state-actions {
+  margin-top: 22px;
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 640px) {
+  .access-state-card {
+    padding: 26px 18px;
+  }
+
+  .access-state-actions a,
+  .access-state-actions button {
+    width: 100%;
+  }
+}

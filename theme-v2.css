@@ -1,0 +1,523 @@
+/* =========================================================
+   Campus Connect Theme V2
+   Purpose: modern page composition, smoother visual hierarchy,
+   attractive SaaS-style layout, transitions, and consistent flow.
+   This file is loaded after style.css and safely overrides visuals.
+   ========================================================= */
+
+   :root {
+    --v2-primary: #2563eb;
+    --v2-primary-2: #1d4ed8;
+    --v2-indigo: #4f46e5;
+    --v2-purple: #7c3aed;
+    --v2-cyan: #06b6d4;
+    --v2-green: #16a34a;
+    --v2-yellow: #d97706;
+    --v2-red: #dc2626;
+    --v2-ink: #0f172a;
+    --v2-text: #1e293b;
+    --v2-muted: #64748b;
+    --v2-line: rgba(148, 163, 184, 0.24);
+    --v2-card: rgba(255, 255, 255, 0.82);
+    --v2-card-solid: #ffffff;
+    --v2-soft: #eff6ff;
+    --v2-radius-xl: 28px;
+    --v2-radius-lg: 22px;
+    --v2-radius-md: 16px;
+    --v2-shadow-1: 0 10px 30px rgba(15, 23, 42, 0.08);
+    --v2-shadow-2: 0 20px 55px rgba(15, 23, 42, 0.13);
+    --v2-shadow-3: 0 30px 90px rgba(15, 23, 42, 0.18);
+  }
+  
+  body {
+    background:
+      radial-gradient(circle at 10% 0%, rgba(37, 99, 235, 0.16), transparent 34rem),
+      radial-gradient(circle at 90% 8%, rgba(124, 58, 237, 0.14), transparent 32rem),
+      radial-gradient(circle at 50% 50%, rgba(6, 182, 212, 0.08), transparent 40rem),
+      linear-gradient(180deg, #eef5ff 0%, #f8fbff 45%, #eef4ff 100%);
+    color: var(--v2-text);
+  }
+  
+  .site-header {
+    background: rgba(15, 23, 42, 0.82) !important;
+    backdrop-filter: blur(20px) saturate(160%);
+    -webkit-backdrop-filter: blur(20px) saturate(160%);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  }
+  
+  .navbar {
+    min-height: 74px;
+  }
+  
+  .logo,
+  .modern-logo {
+    font-size: 25px;
+    font-weight: 900;
+    letter-spacing: -0.8px;
+  }
+  
+  .nav-links {
+    gap: 18px;
+  }
+  
+  .nav-links a,
+  .nav-auth-btn {
+    font-size: 14px;
+    font-weight: 800;
+  }
+  
+  .nav-auth-btn {
+    background: linear-gradient(135deg, rgba(37, 99, 235, 0.95), rgba(124, 58, 237, 0.95));
+    border: none;
+    box-shadow: 0 10px 25px rgba(37, 99, 235, 0.28);
+  }
+  
+  .section,
+  .admin-container {
+    width: min(1180px, 92%);
+  }
+  
+  /* ---------- Hero / top page composition ---------- */
+  .modern-hero-section,
+  .hero {
+    padding-top: 82px;
+    padding-bottom: 86px;
+  }
+  
+  .modern-hero-grid,
+  .hero {
+    align-items: center;
+  }
+  
+  .modern-hero-content,
+  .hero-content {
+    position: relative;
+    z-index: 1;
+  }
+  
+  .modern-hero-content h1,
+  .hero h1,
+  .admin-hero h1,
+  .modern-page-hero h1 {
+    font-size: clamp(2.4rem, 5vw, 4.8rem);
+    line-height: 0.98;
+    letter-spacing: -2.6px;
+  }
+  
+  .hero-text,
+  .modern-hero-content .hero-text {
+    font-size: 1.08rem;
+    line-height: 1.8;
+    max-width: 720px;
+  }
+  
+  .section-kicker,
+  .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 7px 12px;
+    border-radius: 999px;
+    background: rgba(219, 234, 254, 0.76);
+    border: 1px solid rgba(37, 99, 235, 0.13);
+    color: var(--v2-primary-2) !important;
+    font-weight: 900;
+    width: fit-content;
+  }
+  
+  .hero-actions,
+  .page-hero-actions,
+  .report-actions,
+  .event-admin-actions {
+    gap: 12px;
+  }
+  
+  .btn,
+  .btn-like,
+  .register-btn,
+  .details-btn,
+  .report-btn,
+  .manage-action-btn,
+  .create-event-btn,
+  .approve-btn,
+  .reject-btn,
+  .changes-btn,
+  .publish-btn,
+  .logout-admin-btn {
+    border-radius: 14px !important;
+    font-weight: 900;
+    letter-spacing: -0.15px;
+  }
+  
+  .primary-btn,
+  .register-btn,
+  .manage-action-btn,
+  .create-event-btn,
+  .publish-btn,
+  .approve-btn {
+    background: linear-gradient(135deg, var(--v2-primary), var(--v2-purple)) !important;
+    color: white !important;
+    border: none !important;
+  }
+  
+  .secondary-btn,
+  .details-btn,
+  .report-btn {
+    background: rgba(255, 255, 255, 0.72) !important;
+    border: 1px solid rgba(37, 99, 235, 0.18) !important;
+    color: var(--v2-primary-2) !important;
+  }
+  
+  .reject-btn {
+    background: linear-gradient(135deg, #fee2e2, #fecaca) !important;
+    color: #991b1b !important;
+  }
+  
+  .changes-btn {
+    background: linear-gradient(135deg, #fef3c7, #fde68a) !important;
+    color: #92400e !important;
+  }
+  
+  /* ---------- Cards ---------- */
+  .hero-panel,
+  .modern-hero-card,
+  .activity-card,
+  .quick-info-card,
+  .platform-card,
+  .club-card,
+  .event-card,
+  .student-card,
+  .admin-card,
+  .admin-stat-card,
+  .calendar-card,
+  .role-card,
+  .timeline-item,
+  .modal-box,
+  .club-name-row,
+  .club-event-detail-card,
+  .portal-user-card,
+  .notification-card,
+  .registration-manage-card,
+  .student-dashboard-item,
+  .hierarchy-column {
+    background: var(--v2-card) !important;
+    border: 1px solid rgba(255, 255, 255, 0.74) !important;
+    box-shadow: var(--v2-shadow-1) !important;
+    backdrop-filter: blur(18px) saturate(145%);
+    -webkit-backdrop-filter: blur(18px) saturate(145%);
+  }
+  
+  .hero-panel,
+  .modern-hero-card,
+  .admin-card,
+  .student-card,
+  .event-card,
+  .club-card,
+  .platform-card,
+  .quick-info-card,
+  .calendar-card,
+  .role-card,
+  .timeline-item {
+    border-radius: var(--v2-radius-lg) !important;
+  }
+  
+  .hero-panel:hover,
+  .modern-hero-card:hover,
+  .quick-info-card:hover,
+  .platform-card:hover,
+  .club-card:hover,
+  .event-card:hover,
+  .student-card:hover,
+  .admin-card:hover,
+  .admin-stat-card:hover,
+  .calendar-card:hover,
+  .role-card:hover,
+  .club-name-row:hover,
+  .club-event-detail-card:hover,
+  .portal-user-card:hover,
+  .notification-card:hover,
+  .registration-manage-card:hover,
+  .student-dashboard-item:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--v2-shadow-2) !important;
+  }
+  
+  /* ---------- Public home ordering / page feel ---------- */
+  .platform-section,
+  .quick-info-section,
+  .modern-clubs-section,
+  .modern-events-section,
+  .student-dashboard-section {
+    padding-top: 52px;
+    padding-bottom: 52px;
+  }
+  
+  .platform-card-grid,
+  .quick-info-grid,
+  .club-grid,
+  .event-grid,
+  .student-dashboard-grid,
+  .admin-stats-grid,
+  .dashboard-grid,
+  .quick-action-grid,
+  .modern-detail-grid {
+    gap: 24px;
+  }
+  
+  .platform-card {
+    padding: 26px;
+    min-height: 210px;
+  }
+  
+  .platform-icon,
+  .stat-icon {
+    width: 52px;
+    height: 52px;
+    display: grid;
+    place-items: center;
+    border-radius: 16px;
+    background: linear-gradient(135deg, #dbeafe, #ede9fe);
+    font-size: 24px;
+    margin-bottom: 16px;
+  }
+  
+  .quick-info-card {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .quick-info-card::after,
+  .admin-stat-card::after {
+    content: "";
+    position: absolute;
+    inset: auto -30px -45px auto;
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    background: rgba(37, 99, 235, 0.09);
+  }
+  
+  .club-card,
+  .event-card {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+  }
+  
+  .event-actions {
+    margin-top: auto;
+  }
+  
+  .event-meta {
+    background: rgba(248, 250, 252, 0.78);
+    border: 1px solid rgba(148, 163, 184, 0.18);
+    border-radius: 14px;
+    padding: 12px;
+  }
+  
+  /* ---------- Dashboard composition ---------- */
+  .admin-hero,
+  .modern-page-hero {
+    border-radius: 30px !important;
+    padding: clamp(30px, 5vw, 48px) !important;
+  }
+  
+  .modern-dashboard-heading,
+  .dashboard-heading,
+  .admin-user-bar {
+    border-radius: var(--v2-radius-lg) !important;
+  }
+  
+  .modern-stats-grid .admin-stat-card {
+    text-align: left;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .modern-stats-grid .admin-stat-card h3 {
+    font-size: 2.4rem;
+    line-height: 1;
+  }
+  
+  .quick-action-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+  }
+  
+  .quick-action-card {
+    padding: 20px;
+    border-radius: 18px;
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+  }
+  
+  .quick-action-card span {
+    width: 44px;
+    height: 44px;
+    display: grid;
+    place-items: center;
+    border-radius: 14px;
+    background: linear-gradient(135deg, #dbeafe, #ede9fe);
+    flex: 0 0 auto;
+  }
+  
+  .quick-action-card strong {
+    color: var(--v2-ink);
+  }
+  
+  .quick-action-card p {
+    color: var(--v2-muted);
+    font-size: 0.92rem;
+    margin-top: 4px;
+  }
+  
+  .admin-calendar-cell {
+    border-radius: 16px !important;
+  }
+  
+  .approval-item,
+  .club-calendar-item,
+  .summary-row {
+    background: rgba(248, 250, 252, 0.78) !important;
+  }
+  
+  /* ---------- Directory/detail pages ---------- */
+  .modern-page-container {
+    width: min(1180px, 92%);
+  }
+  
+  .modern-page-hero {
+    min-height: 230px;
+  }
+  
+  .modern-detail-grid {
+    align-items: stretch;
+  }
+  
+  .details-list,
+  .modern-details-list,
+  .club-name-list,
+  .club-event-detail-list,
+  .notification-list,
+  .portal-user-list,
+  .registration-management-list {
+    gap: 14px;
+  }
+  
+  .club-name-row,
+  .club-event-detail-card,
+  .portal-user-card,
+  .notification-card,
+  .registration-manage-card {
+    border-radius: 18px !important;
+    padding: 18px !important;
+  }
+  
+  .directory-toolbar,
+  .portal-user-controls,
+  .filter-row {
+    background: rgba(255, 255, 255, 0.56);
+    border: 1px solid rgba(148, 163, 184, 0.18);
+    padding: 12px;
+    border-radius: 18px;
+  }
+  
+  /* ---------- Forms ---------- */
+  .form-group label {
+    color: #334155;
+    font-size: 0.92rem;
+  }
+  
+  .form-group input,
+  .form-group select,
+  .form-group textarea,
+  .filter-row input,
+  .filter-row select,
+  .portal-user-controls input,
+  .portal-user-controls select {
+    border-radius: 13px !important;
+  }
+  
+  .modern-form-panel,
+  .team-fields,
+  .payment-fields,
+  .team-size-fields,
+  .member-add-form {
+    border-radius: 20px !important;
+  }
+  
+  /* ---------- Notifications ---------- */
+  .notification-card h3 {
+    letter-spacing: -0.3px;
+  }
+  
+  .notification-actions {
+    justify-content: flex-start;
+  }
+  
+  /* ---------- Print ---------- */
+  @media print {
+    body::before {
+      display: none;
+    }
+  
+    .admin-card,
+    .registration-manage-card,
+    .participant-print-card {
+      background: white !important;
+    }
+  }
+  
+  /* ---------- Responsive polish ---------- */
+  @media (max-width: 1100px) {
+    .quick-action-grid,
+    .platform-card-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  @media (max-width: 900px) {
+    .quick-action-grid,
+    .platform-card-grid {
+      grid-template-columns: 1fr;
+    }
+  
+    .nav-links.active-desktop {
+      gap: 12px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+  
+    .modern-hero-section {
+      padding-top: 54px;
+    }
+  }
+  
+  @media (max-width: 640px) {
+    .admin-container,
+    .section,
+    .modern-page-container {
+      width: min(100% - 28px, 1180px);
+    }
+  
+    .admin-card,
+    .event-card,
+    .club-card,
+    .student-card,
+    .quick-info-card,
+    .platform-card {
+      padding: 18px !important;
+    }
+  
+    .modern-page-hero,
+    .admin-hero {
+      border-radius: 22px !important;
+    }
+  }
+  EOF
+  
+  node --check campus-connect/admin.js && node --check campus-connect/script.js && node --check campus-connect/event-participants.js && node --check campus-connect/event-assignments.js && node --check campus-connect/my-event-details.js
+  

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Campus Connect - My Club Details</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="theme-v2.css" />
+</head>
+<body>
+  <header class="site-header">
+    <nav class="navbar">
+      <h2 class="logo">Campus Connect</h2>
+      <ul class="nav-links active-desktop">
+        <li><a href="index.html">Public Home</a></li>
+        <li><a href="my-clubs.html">My Clubs</a></li>
+        <li><a href="notifications.html">Notifications</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="admin-container modern-page-container">
+    <section class="admin-hero modern-page-hero">
+      <div>
+        <p class="eyebrow">My Club</p>
+        <h1 id="myClubTitle">Loading Club...</h1>
+        <p id="myClubDescription">Please wait while club details are loaded.</p>
+      </div>
+    </section>
+
+    <section class="modern-detail-grid">
+      <div class="admin-card detail-info-card">
+        <div class="admin-card-header">
+          <h3>My Membership</h3>
+          <p>Your role and club membership details.</p>
+        </div>
+        <div class="details-list modern-details-list" id="myMembershipBox">
+          <p>Loading...</p>
+        </div>
+      </div>
+
+      <div class="admin-card detail-summary-card">
+        <div class="admin-card-header">
+          <h3>Club Details</h3>
+          <p>Information about this club.</p>
+        </div>
+        <div class="details-list modern-details-list" id="myClubInfoBox">
+          <p>Loading...</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="admin-card registrations-management-card modern-list-card">
+      <div class="admin-card-header">
+        <h3>Approved / Published Club Events</h3>
+        <p>Click an event to view details and tasks assigned to you.</p>
+      </div>
+      <div class="club-event-detail-list modern-directory-list" id="myClubEventsList">
+        <p class="loading-message small-loading">Loading events...</p>
+      </div>
+    </section>
+  </main>
+
+  <script src="toast.js"></script>
+  <script src="my-club-details.js"></script>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Campus Connect - Club Requests</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="theme-v2.css" />
+</head>
+<body>
+  <header class="site-header">
+    <nav class="navbar">
+      <h2 class="logo">Campus Connect</h2>
+      <ul class="nav-links active-desktop">
+        <li><a href="index.html">Public Home</a></li>
+        <li><a href="admin.html">Admin Dashboard</a></li>
+        <li><a href="clubs.html">Clubs Directory</a></li>
+        <li><a href="users.html">Portal Users</a></li>
+        <li><a href="notifications.html">Notifications</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="admin-container modern-page-container">
+    <section class="admin-hero modern-page-hero">
+      <div>
+        <p class="eyebrow">Super Admin • Club Approvals</p>
+        <h1>Club Creation Requests</h1>
+        <p>Review club details submitted by selected students and approve or reject new club creation.</p>
+      </div>
+      <div class="page-hero-actions">
+        <a href="clubs.html" class="secondary-btn btn-like">Back to Clubs</a>
+      </div>
+    </section>
+
+    <section class="admin-card modern-directory-card">
+      <div class="admin-card-header with-action">
+        <div>
+          <h3>Requests Queue</h3>
+          <p>Submitted requests are waiting for Super Admin approval. Permission-granted requests are waiting for student submission.</p>
+        </div>
+      </div>
+
+      <div class="directory-toolbar">
+        <input type="text" id="requestSearch" placeholder="Search by club or student..." />
+        <select id="requestStatusFilter">
+          <option value="all">All Statuses</option>
+          <option value="permission_granted">Permission Granted</option>
+          <option value="submitted">Submitted</option>
+          <option value="approved">Approved</option>
+          <option value="rejected">Rejected</option>
+        </select>
+      </div>
+
+      <div class="registration-management-list modern-directory-list" id="clubRequestList">
+        <p class="loading-message small-loading">Loading club requests...</p>
+      </div>
+    </section>
+  </main>
+
+  <script src="toast.js"></script>
+  <script src="club-requests.js"></script>
+</body>
+</html>

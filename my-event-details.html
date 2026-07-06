@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Campus Connect - My Event Details</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="theme-v2.css" />
+</head>
+<body>
+  <header class="site-header">
+    <nav class="navbar">
+      <h2 class="logo">Campus Connect</h2>
+      <ul class="nav-links active-desktop">
+        <li><a href="index.html">Public Home</a></li>
+        <li><a href="my-clubs.html">My Clubs</a></li>
+        <li><a href="notifications.html">Notifications</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="admin-container modern-page-container">
+    <section class="admin-hero modern-page-hero">
+      <div>
+        <p class="eyebrow">My Club Event</p>
+        <h1 id="myEventTitle">Loading Event...</h1>
+        <p id="myEventSubtitle">Please wait while event details are loaded.</p>
+      </div>
+    </section>
+
+    <section class="modern-detail-grid">
+      <div class="admin-card detail-info-card">
+        <div class="admin-card-header">
+          <h3>Event Details</h3>
+          <p>Details of this club event.</p>
+        </div>
+        <div class="details-list modern-details-list" id="myEventInfoBox">
+          <p>Loading...</p>
+        </div>
+      </div>
+
+      <div class="admin-card detail-summary-card">
+        <div class="admin-card-header">
+          <h3>My Assigned Tasks</h3>
+          <p>Tasks and roles assigned to you for this event.</p>
+        </div>
+        <div class="registration-management-list modern-directory-list" id="myAssignmentsList">
+          <p class="loading-message small-loading">Loading assignments...</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="toast.js"></script>
+  <script src="my-event-details.js"></script>
+</body>
+</html>

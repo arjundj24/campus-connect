@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Campus Connect - College Events Platform</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="theme-3d.css" />
+</head>
+<body>
+  <header class="site-header modern-header">
+    <nav class="navbar modern-navbar">
+      <a href="#home" class="logo modern-logo">Campus Connect</a>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#clubs">Clubs</a></li>
+        <li><a href="#events">Events</a></li>
+        <li><a href="notifications.html" class="notification-nav-link">Notifications <span class="notification-badge hidden" id="notificationBadge">0</span></a></li>
+        <li><a href="my-clubs.html" id="myClubsNav" class="hidden">My Clubs</a></li>
+        <li><a href="admin.html" id="adminDashboardNav" class="hidden">Admin Dashboard</a></li>
+        <li><a href="#studentDashboard" id="studentDashboardNav" class="hidden">My Dashboard</a></li>
+        <li><button class="nav-auth-btn" id="studentAuthBtn">Login</button></li>
+        <li class="student-user-pill hidden" id="studentUserPill">
+          <span id="studentUserName">Student</span>
+          <button id="studentLogoutBtn">Logout</button>
+        </li>
+      </ul>
+
+      <button class="menu-btn" id="menuBtn" aria-label="Open navigation menu">☰</button>
+    </nav>
+  </header>
+
+  <main>
+    <section id="home" class="section modern-hero-section">
+      <div class="modern-hero-grid">
+        <div class="modern-hero-content">
+          <p class="section-kicker">Campus events, clubs, registrations, and certificates</p>
+          <h1>One modern portal for every campus event.</h1>
+          <p class="hero-text">
+            Discover official club events, register online, track your participation, view certificates,
+            and stay connected with your college clubs through Campus Connect.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#events" class="btn primary-btn">Explore Events</a>
+            <a href="#clubs" class="btn secondary-btn">Browse Clubs</a>
+          </div>
+
+          <div class="hero-metrics">
+            <div>
+              <strong id="homeClubCount">0</strong>
+              <span>Active Clubs</span>
+            </div>
+            <div>
+              <strong id="homeEventCount">0</strong>
+              <span>Published Events</span>
+            </div>
+            <div>
+              <strong>24/7</strong>
+              <span>Online Registration</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="modern-hero-card">
+          <div class="hero-card-topline">
+            <span class="live-dot"></span>
+            <span>Live campus activity</span>
+          </div>
+
+          <div class="activity-card main-activity-card">
+            <span class="activity-icon">📅</span>
+            <div>
+              <h3>Upcoming Events</h3>
+              <p>View events approved and published by college clubs.</p>
+            </div>
+          </div>
+
+          <div class="activity-list">
+            <div class="activity-row">
+              <span>🏛️</span>
+              <div>
+                <strong>Club directory</strong>
+                <p>Explore active student clubs.</p>
+              </div>
+            </div>
+            <div class="activity-row">
+              <span>🎟️</span>
+              <div>
+                <strong>Easy registration</strong>
+                <p>Login once and register for events.</p>
+              </div>
+            </div>
+            <div class="activity-row">
+              <span>🏆</span>
+              <div>
+                <strong>Certificates</strong>
+                <p>Track certificates issued after events.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section platform-section">
+      <div class="section-heading-center">
+        <p class="section-kicker">How students use Campus Connect</p>
+        <h2 class="section-title">Everything you need for campus participation</h2>
+        <p class="section-subtitle">
+          A simple student-first portal to discover clubs, register for events, and track your activity.
+        </p>
+      </div>
+
+      <div class="platform-card-grid">
+        <div class="platform-card">
+          <div class="platform-icon">🔎</div>
+          <h3>Discover Events</h3>
+          <p>Search and filter official events published by different clubs.</p>
+        </div>
+        <div class="platform-card">
+          <div class="platform-icon">🏛️</div>
+          <h3>Explore Clubs</h3>
+          <p>View club profiles, coordinators, contacts, and published activities.</p>
+        </div>
+        <div class="platform-card">
+          <div class="platform-icon">✅</div>
+          <h3>Register Online</h3>
+          <p>Login to register individually or as a team with payment details if required.</p>
+        </div>
+        <div class="platform-card">
+          <div class="platform-icon">📌</div>
+          <h3>Track Activity</h3>
+          <p>See your registrations, club memberships, assigned tasks, and certificates.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="clubs" class="section modern-clubs-section">
+      <div class="section-heading-row modern-section-row">
+        <div>
+          <p class="section-kicker">College clubs</p>
+          <h2 class="section-title left-title">Active Clubs</h2>
+          <p class="section-subtitle left-subtitle">
+            Click a club to view its details and the events it has published.
+          </p>
+        </div>
+      </div>
+
+      <div class="club-grid" id="clubGrid">
+        <p class="loading-message">Loading clubs...</p>
+      </div>
+    </section>
+
+    <section id="events" class="section events-section modern-events-section">
+      <div class="section-heading-row modern-section-row">
+        <div>
+          <p class="section-kicker">Published events</p>
+          <h2 class="section-title left-title">Upcoming Opportunities</h2>
+          <p class="section-subtitle left-subtitle">
+            Anyone can view published events. Login is required only when registering.
+          </p>
+        </div>
+
+        <div class="filter-row modern-filter-row">
+          <input type="text" id="eventSearch" placeholder="Search events, clubs, or type..." />
+          <select id="clubFilter">
+            <option value="all">All Clubs</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="event-grid" id="eventGrid">
+        <p class="loading-message">Loading published events...</p>
+      </div>
+    </section>
+
+    <section id="studentDashboard" class="section student-dashboard-section hidden">
+      <div class="section-heading-row modern-section-row">
+        <div>
+          <p class="section-kicker">Personal portal</p>
+          <h2 class="section-title left-title">My Student Dashboard</h2>
+          <p class="section-subtitle left-subtitle">
+            Manage your profile, track registrations, view memberships, and check certificate status.
+          </p>
+        </div>
+      </div>
+
+      <div class="student-dashboard-grid">
+        <section class="student-card profile-card">
+          <div class="card-title-row">
+            <div>
+              <h3>My Profile</h3>
+              <p class="dashboard-help">Keep your profile updated for faster registrations.</p>
+            </div>
+          </div>
+
+          <form id="studentProfileForm">
+            <div class="profile-actions">
+              <button type="button" class="details-btn" id="editProfileBtn">Edit Profile</button>
+              <button type="button" class="reject-btn hidden" id="cancelProfileEditBtn">Cancel</button>
+            </div>
+
+            <div class="form-grid">
+              <div class="form-group">
+                <label for="profileName">Name</label>
+                <input type="text" id="profileName" required disabled />
+              </div>
+              <div class="form-group">
+                <label for="profileEmail">Email</label>
+                <input type="email" id="profileEmail" disabled />
+              </div>
+              <div class="form-group">
+                <label for="profilePhone">Phone</label>
+                <input type="tel" id="profilePhone" disabled />
+              </div>
+              <div class="form-group">
+                <label for="profileCollege">College</label>
+                <input type="text" id="profileCollege" disabled />
+              </div>
+              <div class="form-group">
+                <label for="profileDepartment">Department</label>
+                <input type="text" id="profileDepartment" disabled />
+              </div>
+              <div class="form-group">
+                <label for="profileYear">Year</label>
+                <select id="profileYear" disabled>
+                  <option value="">Select year</option>
+                  <option value="1st Year">1st Year</option>
+                  <option value="2nd Year">2nd Year</option>
+                  <option value="3rd Year">3rd Year</option>
+                  <option value="4th Year">4th Year</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="profileRoll">Roll Number</label>
+                <input type="text" id="profileRoll" disabled />
+              </div>
+            </div>
+            <button type="submit" class="register-btn full-width hidden" id="saveProfileBtn">Save Profile</button>
+            <div class="success-message hidden" id="profileSuccess">✅ Profile updated successfully.</div>
+          </form>
+        </section>
+
+        <section class="student-card">
+          <h3>My Registrations</h3>
+          <p class="dashboard-help">Events you have registered for will appear here.</p>
+          <div class="student-list" id="myRegistrationsList">
+            <p class="loading-message small-loading">No registrations loaded.</p>
+          </div>
+        </section>
+
+        <section class="student-card">
+          <h3>My Certificates</h3>
+          <p class="dashboard-help">Issued certificates from attended events will appear here.</p>
+          <div class="student-list" id="myCertificatesList">
+            <p class="loading-message small-loading">No certificates loaded.</p>
+          </div>
+        </section>
+      </div>
+    </section>
+  </main>
+
+  <div class="modal-overlay hidden" id="studentAuthModal">
+    <div class="modal-box registration-box">
+      <button class="close-btn" id="closeStudentAuthModal">×</button>
+      <h2>Login to Campus Connect</h2>
+      <p class="modal-club">Students, club admins, coordinators, and super admins can login from here.</p>
+      <div class="auth-message" id="studentAuthMessage"></div>
+
+      <div class="auth-grid">
+        <form class="auth-card" id="studentSignupForm">
+          <h3>Create Student Account</h3>
+          <div class="form-group">
+            <label for="studentSignupName">Name</label>
+            <input type="text" id="studentSignupName" required />
+          </div>
+          <div class="form-group">
+            <label for="studentSignupEmail">Email</label>
+            <input type="email" id="studentSignupEmail" required />
+          </div>
+          <div class="form-group">
+            <label for="studentSignupPassword">Password</label>
+            <input type="password" id="studentSignupPassword" required />
+          </div>
+          <button type="submit" class="register-btn full-width">Sign Up</button>
+        </form>
+
+        <form class="auth-card" id="studentLoginForm">
+          <h3>Login</h3>
+          <div class="form-group">
+            <label for="studentLoginEmail">Email</label>
+            <input type="email" id="studentLoginEmail" required />
+          </div>
+          <div class="form-group">
+            <label for="studentLoginPassword">Password</label>
+            <input type="password" id="studentLoginPassword" required />
+          </div>
+          <button type="submit" class="register-btn full-width">Login</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal-overlay hidden" id="eventModal">
+    <div class="modal-box">
+      <button class="close-btn" id="closeEventModal">×</button>
+      <h2 id="modalEventTitle">Event Title</h2>
+      <p class="modal-club" id="modalClubName">Club Name</p>
+      <p id="modalEventDescription">Event description</p>
+      <div class="modal-details">
+        <p><strong>Date:</strong> <span id="modalEventDate"></span></p>
+        <p><strong>Venue:</strong> <span id="modalEventVenue"></span></p>
+        <p><strong>Registration Type:</strong> <span id="modalEventType"></span></p>
+        <p><strong>Fee:</strong> <span id="modalEventFee"></span></p>
+        <p><strong>UPI ID:</strong> <span id="modalUpiId"></span></p>
+      </div>
+      <button class="register-btn full-width" id="modalRegisterBtn">Register for this Event</button>
+    </div>
+  </div>
+
+  <div class="modal-overlay hidden" id="registrationModal">
+    <div class="modal-box registration-box">
+      <button class="close-btn" id="closeRegistrationModal">×</button>
+      <h2>Event Registration</h2>
+      <p class="modal-club" id="registrationEventName">Selected Event</p>
+
+      <form id="registrationForm">
+        <div class="form-group">
+          <label for="registrationType">Registration Type</label>
+          <select id="registrationType" required>
+            <option value="individual">Individual</option>
+            <option value="team">Team</option>
+          </select>
+        </div>
+
+        <div class="form-grid">
+          <div class="form-group">
+            <label for="participantName">Full Name / Team Leader Name</label>
+            <input type="text" id="participantName" required />
+          </div>
+          <div class="form-group">
+            <label for="participantEmail">Email</label>
+            <input type="email" id="participantEmail" required />
+          </div>
+          <div class="form-group">
+            <label for="participantPhone">Phone</label>
+            <input type="tel" id="participantPhone" required />
+          </div>
+          <div class="form-group">
+            <label for="participantCollege">College</label>
+            <input type="text" id="participantCollege" required />
+          </div>
+          <div class="form-group">
+            <label for="participantDepartment">Department</label>
+            <input type="text" id="participantDepartment" required />
+          </div>
+          <div class="form-group">
+            <label for="participantYear">Year</label>
+            <select id="participantYear" required>
+              <option value="">Select year</option>
+              <option value="1st Year">1st Year</option>
+              <option value="2nd Year">2nd Year</option>
+              <option value="3rd Year">3rd Year</option>
+              <option value="4th Year">4th Year</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="participantRoll">Roll Number</label>
+            <input type="text" id="participantRoll" required />
+          </div>
+        </div>
+
+        <div class="team-fields hidden" id="teamFields">
+          <div class="form-group">
+            <label for="teamName">Team Name</label>
+            <input type="text" id="teamName" />
+          </div>
+          <div class="form-group">
+            <label for="teamMembers">Team Members</label>
+            <textarea id="teamMembers" rows="4" placeholder="Format: Name, Roll Number, Department, Year, Email, Phone"></textarea>
+          </div>
+        </div>
+
+        <div class="payment-fields hidden" id="paymentFields">
+          <h3>Payment Details</h3>
+          <p class="payment-note" id="paymentNote">Payment instructions will appear here.</p>
+          <div class="form-grid">
+            <div class="form-group">
+              <label for="transactionId">Transaction ID</label>
+              <input type="text" id="transactionId" />
+            </div>
+            <div class="form-group">
+              <label for="paymentScreenshot">Payment Screenshot File Name</label>
+              <input type="text" id="paymentScreenshot" placeholder="Example: payment.png" />
+            </div>
+          </div>
+        </div>
+
+        <button type="submit" class="register-btn full-width">Submit Registration</button>
+      </form>
+
+      <div class="success-message hidden" id="registrationSuccess">✅ Registration submitted successfully.</div>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <p>© 2026 Campus Connect. Built for college club event management.</p>
+  </footer>
+
+  <script src="toast.js"></script>
+  <script src="script.js"></script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a160546b48f4b85b',t:'MTc4MzE5MTE3NA=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>

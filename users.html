@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Campus Connect - Portal Users</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="theme-v2.css" />
+</head>
+<body>
+  <header class="site-header">
+    <nav class="navbar">
+      <h2 class="logo">Campus Connect</h2>
+      <ul class="nav-links active-desktop">
+        <li><a href="index.html">Public Home</a></li>
+        <li><a href="admin.html">Admin Dashboard</a></li>
+        <li><a href="clubs.html">Clubs Directory</a></li>
+        <li><a href="notifications.html">Notifications</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="admin-container modern-page-container">
+    <section class="admin-hero modern-page-hero">
+      <div>
+        <p class="eyebrow">Super Admin • Users</p>
+        <h1>Portal Users</h1>
+        <p>View students, club admins, coordinators, and super admins registered in Campus Connect.</p>
+      </div>
+      <div class="page-hero-actions">
+        <a href="admin.html" class="secondary-btn btn-like">Back to Dashboard</a>
+      </div>
+    </section>
+
+    <section class="admin-card modern-directory-card" id="usersAccessCard">
+      <div class="admin-card-header with-action">
+        <div>
+          <h3>Users Directory</h3>
+          <p>Search, filter, and manage users. Club creation permission is handled from the Clubs page.</p>
+        </div>
+      </div>
+
+      <div class="admin-stats-grid users-stats-grid modern-stats-grid">
+        <div class="admin-stat-card modern-stat-card">
+          <span class="stat-icon">👥</span>
+          <h3 id="totalUsersCount">0</h3>
+          <p>Total Users</p>
+        </div>
+        <div class="admin-stat-card modern-stat-card success-stat">
+          <span class="stat-icon">🎓</span>
+          <h3 id="studentsCount">0</h3>
+          <p>Students</p>
+        </div>
+        <div class="admin-stat-card modern-stat-card">
+          <span class="stat-icon">🛠️</span>
+          <h3 id="adminsCount">0</h3>
+          <p>Admins/Coordinators</p>
+        </div>
+        <div class="admin-stat-card modern-stat-card warning-stat">
+          <span class="stat-icon">⏸️</span>
+          <h3 id="inactiveUsersCount">0</h3>
+          <p>Inactive</p>
+        </div>
+      </div>
+
+      <div class="directory-toolbar">
+        <input type="text" id="usersSearch" placeholder="Search users by name, email, role, club..." />
+        <select id="usersRoleFilter">
+          <option value="all">All Roles</option>
+          <option value="student">Students</option>
+          <option value="clubadmin">Club Admins</option>
+          <option value="coordinator">Coordinators</option>
+          <option value="superadmin">Super Admins</option>
+        </select>
+      </div>
+
+      <div class="portal-user-list users-page-list modern-directory-list" id="usersPageList">
+        <p class="loading-message small-loading">Loading users...</p>
+      </div>
+    </section>
+  </main>
+
+  <script src="toast.js"></script>
+  <script src="users.js"></script>
+</body>
+</html>

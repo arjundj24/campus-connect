@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Campus Connect - Event Task Assignments</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="theme-v2.css" />
+</head>
+<body>
+  <header class="site-header">
+    <nav class="navbar">
+      <h2 class="logo">Campus Connect</h2>
+      <ul class="nav-links active-desktop">
+        <li><a href="index.html">Public Home</a></li>
+        <li><a href="admin.html">Admin Dashboard</a></li>
+        <li><a href="club-members.html">Club Members</a></li>
+        <li><a href="notifications.html">Notifications</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="admin-container modern-page-container">
+    <section class="admin-hero modern-page-hero">
+      <div>
+        <p class="eyebrow">Club Operations</p>
+        <h1 id="assignmentEventTitle">Event Task Assignments</h1>
+        <p id="assignmentEventSubtitle">Assign club members roles and tasks for this event.</p>
+      </div>
+    </section>
+
+    <section class="modern-detail-grid">
+      <div class="admin-card detail-info-card">
+        <div class="admin-card-header">
+          <h3>Assign New Task</h3>
+          <p>Select a club member and assign an event role/task.</p>
+        </div>
+
+        <form id="assignmentForm">
+          <div class="form-group">
+            <label for="assignmentMember">Club Member</label>
+            <select id="assignmentMember" required>
+              <option value="">Select member</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="assignmentRole">Event Role</label>
+            <input type="text" id="assignmentRole" placeholder="Example: Registration Desk, Stage Manager" required />
+          </div>
+          <div class="form-group">
+            <label for="assignmentTaskTitle">Task Title</label>
+            <input type="text" id="assignmentTaskTitle" placeholder="Example: Verify participant IDs" required />
+          </div>
+          <div class="form-group">
+            <label for="assignmentTaskDescription">Task Description</label>
+            <textarea id="assignmentTaskDescription" rows="4" placeholder="Explain what the member should do"></textarea>
+          </div>
+          <button type="submit" class="register-btn full-width">Assign Task</button>
+        </form>
+      </div>
+
+      <div class="admin-card detail-summary-card">
+        <div class="admin-card-header">
+          <h3>Assigned Members</h3>
+          <p>Members assigned to roles/tasks for this event.</p>
+        </div>
+        <div class="registration-management-list modern-directory-list" id="assignmentList">
+          <p class="loading-message small-loading">Loading assignments...</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="toast.js"></script>
+  <script src="event-assignments.js"></script>
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Campus Connect - Club Details</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="theme-v2.css" />
+</head>
+<body>
+  <header class="site-header">
+    <nav class="navbar">
+      <h2 class="logo">Campus Connect</h2>
+      <ul class="nav-links active-desktop">
+        <li><a href="index.html">Public Home</a></li>
+        <li><a href="admin.html">Admin Dashboard</a></li>
+        <li><a href="clubs.html">Clubs Directory</a></li>
+        <li><a href="notifications.html">Notifications</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="admin-container modern-page-container">
+    <section class="admin-hero modern-page-hero">
+      <div>
+        <p class="eyebrow">Club Profile</p>
+        <h1 id="clubTitle">Loading Club...</h1>
+        <p id="clubDescription">Please wait while club details are loaded.</p>
+      </div>
+      <div class="page-hero-actions">
+        <a href="clubs.html" class="secondary-btn btn-like">Back to Clubs</a>
+      </div>
+    </section>
+
+    <section class="modern-detail-grid">
+      <div class="admin-card detail-info-card">
+        <div class="admin-card-header">
+          <h3>Club Information</h3>
+          <p>Official details and contact information of the selected club.</p>
+        </div>
+        <div class="details-list modern-details-list" id="clubInfoBox">
+          <p>Loading...</p>
+        </div>
+      </div>
+
+      <div class="admin-card detail-summary-card">
+        <div class="admin-card-header">
+          <h3>Club Summary</h3>
+          <p>Quick overview of club activity.</p>
+        </div>
+        <div class="admin-stats-grid compact-stats">
+          <div class="admin-stat-card modern-stat-card">
+            <span class="stat-icon">📅</span>
+            <h3 id="clubEventCount">0</h3>
+            <p>Total Events</p>
+          </div>
+          <div class="admin-stat-card modern-stat-card success-stat">
+            <span class="stat-icon">🚀</span>
+            <h3 id="clubPublishedCount">0</h3>
+            <p>Published</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="admin-card registrations-management-card modern-list-card">
+      <div class="admin-card-header with-action">
+        <div>
+          <h3>Events Associated With This Club</h3>
+          <p>Open an event to view details, registrations, and participants.</p>
+        </div>
+      </div>
+      <div class="club-event-detail-list modern-directory-list" id="clubEventsList">
+        <p class="loading-message small-loading">Loading events...</p>
+      </div>
+    </section>
+  </main>
+
+  <script src="toast.js"></script>
+  <script src="access-state.js"></script>
+  <script src="club-details.js"></script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a1680c7daab39149',t:'MTc4MzI3MjExNA=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
