@@ -1,5 +1,4 @@
-const API_BASE_URL = 'http://localhost:5001/api';
-
+const API_BASE_URL = 'https://campus-connect-a3ga.onrender.com/api';
 const adminLoginPanel = document.getElementById('adminLoginPanel');
 const adminDashboardContent = document.getElementById('adminDashboardContent');
 const adminUserBar = document.getElementById('adminUserBar');
